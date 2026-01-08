@@ -19,7 +19,7 @@ writing_locus:
   csv: text
   airtable: text
 writing_note:
-  name: Note
+  name: Writing Note
   csv: text+
   airtable: text+
   delimiter: ["|~|"]

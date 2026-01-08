@@ -17,8 +17,8 @@ note:
   delimiter: ["|~|"]
 mss:
   name: Related MSS JSON
-  csv: text # JSON?
-  airtable: text # JSON?
+  csv: text
+  airtable: text
 level:
   name: Related MSS Level
   csv: text

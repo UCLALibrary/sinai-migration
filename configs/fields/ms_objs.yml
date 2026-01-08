@@ -63,7 +63,7 @@ feature_label:
   delimiter: [","]
   lookup: features.label
 part_id:
-  name: Part IDs
+  name: Portal Part IDs
   csv: record+
   airtable: record+
   delimiter: [","]
@@ -186,7 +186,7 @@ part_typed_notes:
     airtable: text+
     delimiter: ["|~|"]
 paracontent:
-  name: Paracontents
+  name: MS Paracontents
   csv: record+
   airtable: record+
   delimiter: [","]
@@ -355,7 +355,7 @@ assoc_date_note:
   airtable: text+
   delimiter: ["|~|", "#"]
 related_mss:
-  name: Related MSS
+  name: Related Mss
   csv: record+
   airtable: record+
   delimiter: [","]
@@ -481,18 +481,18 @@ reconstructed_from:
   delimiter: [","]
   lookup: ms_objs.ark
 change_log_message:
-  name: Message
+  name: Change Log Message
   csv: text
   airtable: text
 change_log_contributor:
-  name: Contributor
+  name: Change Log Contributor
   csv: text
   airtable: text
 change_log_added_by:
-  name: Added by
+  name: Change Log Added by
   csv: text
   airtable: text
 change_log_timestamp:
-  name: Timestamp
+  name: Change Log Timestamp
   csv: text
   airtable: text
