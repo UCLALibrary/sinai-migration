@@ -44,10 +44,11 @@ def set_configs(args):
     
     # Open the file passed by the args.config value
     # TODO: try/catch i/o issues
-    set_table_configs(dir=args.config, file="table_configs.yml")
+    set_table_configs(args.config)
 
     # add the configuration data for each table's fields to its object
-    set_field_configs(dir=args.config)
+    config_dir_path = os.path.dirname(args.config)
+    set_field_configs(base_dir=config_dir_path)
     """
     TODO:
     - hold this space as a place to add more configurations should they prove necessary
@@ -61,8 +62,7 @@ def set_mode(mode):
     global MODE
     MODE = mode
 
-def set_table_configs(dir, file="table_configs.yml"):
-    file_path = dir + "/" + file
+def set_table_configs(file_path):
     with open(file_path) as fh:
         data = yaml.safe_load(fh)
         global AIRTABLE_BASE
@@ -70,8 +70,9 @@ def set_table_configs(dir, file="table_configs.yml"):
         global TABLES
         TABLES = data["tables"]
 
-def set_field_configs(dir):
+def set_field_configs(base_dir):
+    global TABLES
     for table_name in TABLES:
-        with open(dir + "/" + TABLES[table_name]["fields"]) as fh:
+        with open(base_dir + "/" + TABLES[table_name]["fields"]) as fh:
             field_data = yaml.safe_load(fh)
             TABLES[table_name]["fields"] = field_data
