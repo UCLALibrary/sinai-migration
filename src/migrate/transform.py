@@ -4,16 +4,21 @@ This module holds the main logic for converting records into Portal JSON files
 import migrate.config as config
 import migrate.parse as parse
 import migrate.wrangle as wrangle
-import json
+import json, traceback
 
 # the main transformation function
 def transform_records(table_name: str):
     main_table = config.TABLES[table_name] # TODO: raise exception if not in main table types?
     for record in main_table["data"]:
-        transformed_record = transform_single_record(record=main_table["data"].get(record), 
+        try:
+            transformed_record = transform_single_record(record=main_table["data"].get(record), 
                                                      record_type=table_name,
                                                      fields=config.TABLES[table_name]["fields"])
-        wrangle.save_record(record=transformed_record, file_name=transformed_record["ark"][10:], sub_dir="/"+table_name+"/")
+            wrangle.save_record(record=transformed_record, file_name=transformed_record["ark"][10:], sub_dir="/"+table_name+"/")
+        except Exception as e:
+            print(f"Error encountered in {table_name} record with ARK {parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])}")
+            print(e)
+            traceback.print_exc()
 
 def transform_single_record(record, record_type, fields):
 
@@ -383,7 +388,7 @@ def transform_part_data(part_data, other_layer_data=None, related_mss_data=None,
     if related_mss_data:
         part["related_mss"] = transform_related_mss_data(related_mss_data=related_mss_data, level_filter="part")
     else:
-        part["related_mss"] = transform_related_mss_data(related_mss_data=part_data["related_mss"], level_filter=None)
+        part["related_mss"] = transform_related_mss_data(related_mss_data=part_data.get("related_mss"), level_filter=None)
 
     return part
 
@@ -632,7 +637,7 @@ def transform_associated_entity_data(arks, iso, values, as_written, type_id, typ
             e["ark"] = arks[i]
         e["value"] = values[i]
         if entity_type == "date":
-            e["iso"] = process_iso_string(iso[i])
+            e["iso"] = process_iso_string(iso[i]) if iso[i] else None
         e["as_written"] = as_written[i]
         type_obj = {
             "id": type_id[i],

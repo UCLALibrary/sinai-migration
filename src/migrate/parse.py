@@ -44,6 +44,11 @@ def split_by_delim(data, delim, quotechar=None):
     if delim[0] == "," and not(quotechar):
         quotechar = '"'
     agg_data = []
+    
+    # handle cases of empty lower-level delims
+    if not data:
+        return agg_data
+    
     if(isinstance(data, str)):
         for frag in string_split_with_escape(to_split=data, delim=delim[0], quotechar=quotechar):
             agg_data.append(split_by_delim(frag, delim[1:], quotechar))
