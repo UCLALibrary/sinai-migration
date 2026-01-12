@@ -34,7 +34,6 @@ work_wit_id:
   airtable: record+
   delimiter: [","]
   lookup: work_witnesses.*
-# work wit
 paracontent:
   name: Paracontents
   csv: record+
@@ -78,7 +77,7 @@ typed_notes:
     airtable: text+
     delimiter: ["|~|"]
 bibs:
-  name: Reference Instances
+  name: Portal Reference Instances
   csv: record+
   airtable: record+
   delimiter: [","]

@@ -44,7 +44,7 @@ excerpt_id:
   delimiter: [","]
   lookup: excerpts.*
 content_id:
-  name: Contents
+  name: ToC
   csv: record+
   airtable: record+
   delimiter: [","]
