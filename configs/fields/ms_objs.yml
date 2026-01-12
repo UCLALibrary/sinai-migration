@@ -382,7 +382,7 @@ iiif_type_id:
   airtable: text+
   delimiter: [","]
 iiif_type_label:
-  name: IIIF Manifest Type label
+  name: IIIF Manifest Type Label
   csv: text+
   airtable: text+
   delimiter: [","]
