@@ -634,7 +634,7 @@ def transform_associated_entity_data(arks, iso, values, as_written, type_id, typ
     for i in range(0, len(type_id)):
         e = {}
         if entity_type in ["name", "place"]:
-            e["ark"] = arks[i]
+            e["id"] = arks[i]
         e["value"] = values[i]
         if entity_type == "date":
             e["iso"] = process_iso_string(iso[i]) if iso[i] else None
@@ -859,6 +859,7 @@ def transform_iiif_data(iiif_data):
         }
         iiif.append({
             "type": iiif_type,
+            "label": get_element(iiif_data["iiif_label"], i),
             "manifest": get_element(iiif_data["iiif_manifest_url"], i),
             "text_direction": get_element(iiif_data["iiif_text_direction"], i),
             "behavior": get_element(iiif_data["iiif_behavior"], i),
