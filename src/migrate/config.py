@@ -21,8 +21,8 @@ AIRTABLE_USER_KEY = ""
 
 # Default metadata and image rights statements
 # TODO: does this need to be set in the config file?
-METADATA_RIGHTS = ""
-IMAGE_RIGHTS = ""
+METADATA_RIGHTS = "Unless otherwise indicated all metadata associated with this manuscript is copyright the authors and released under Creative Commons Attribution 4.0 International License"
+IMAGE_RIGHTS = "Contact the Monastery of St. Catherine's of the Sinai"
 
 # Default key ordering for top-level objects
 # Note: lower-level objects' key ordering are set by the functions which create them (see transform.py if needing to edit)
