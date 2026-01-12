@@ -370,6 +370,16 @@ viscodex_url:
   csv: text+
   airtable: text+
   delimiter: ["|~|"]
+viscodex_type_id:
+  name: Viscodex Type ID
+  csv: text+
+  airtable: text+
+  delimiter: [","]
+viscodex_type_label:
+  name: Viscodex Type Label
+  csv: text+
+  airtable: text+
+  delimiter: [","]
 bibs:
   name: Reference Instances
   csv: record+

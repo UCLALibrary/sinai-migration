@@ -165,7 +165,8 @@ def transform_manuscript_object_fields(record, result, fields):
     create_associated_entities(result, record, fields)
     # Add viscodex
     # TODO: move to its own function
-    # TODO: type is hard-coded
+    viscodex_type_id = parse.get_data_from_field(source=record, field_config=fields['viscodex_type_id'])
+    viscodex_type_label = parse.get_data_from_field(source=record, field_config=fields['viscodex_type_label'])
     viscodex_label = parse.get_data_from_field(source=record, field_config=fields['viscodex_label'])
     viscodex_url = parse.get_data_from_field(source=record, field_config=fields['viscodex_url'])
     result["viscodex"] = []
@@ -174,8 +175,8 @@ def transform_manuscript_object_fields(record, result, fields):
             result["viscodex"].append(
                 {
                     "type": {
-                        "id": "manuscript",
-                        "label": "Manuscript"
+                        "id": viscodex_type_id[i],
+                        "label": viscodex_type_label[i]
                     },
                     "label": viscodex_label[i],
                     "url": viscodex_url[i]
