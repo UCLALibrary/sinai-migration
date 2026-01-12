@@ -103,7 +103,7 @@ reconstructed_from:
   delimiter: [","]
   lookup: ms_objs.ark
 parent_arks:
-  name: Parent ARKs
+  name: Portal Layers
   csv: text+
   airtable: text+
   delimiter: [","]
