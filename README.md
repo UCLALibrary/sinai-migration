@@ -14,7 +14,7 @@ Clone this repository, then navigate to it in your terminal and run:
 
 Once installed, use poetry to run the script, e.g.:
 
-`poetry run python src/main.py -m csv -c path/to/config all`
+`poetry run python src/main.py -m csv -c path/to/config/table_config.yml all`
 
 The script accepts several command line arguments, which can be viewed by running with the `--help` flag.
 
@@ -56,7 +56,7 @@ Note: `--interactive` is not yet supported
 An example configuration directory is provided in this repository, but it is recommended that users create a copy of this directory elsewhere on their file system and use the `-c`/`--config` option to point to it.
 
 The directory should contain the following:
-- `table_configs.yml`, which contains information related to the tables to be transformed
+- A table configuration file, e.g. `table_configs.yml`, which contains information related to the tables to be transformed
 - A `fields` sub-directory with the field configurations for each table
 
 Most changes will occur at the Table Configuration level, such as updated file paths or Airtable URLs.
