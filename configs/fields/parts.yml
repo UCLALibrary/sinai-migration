@@ -116,7 +116,7 @@ part_paracontent:
   delimiter: [","]
   lookup: paracontents.*
 related_mss:
-  name: Related MSS
+  name: Related Mss
   csv: record+
   airtable: record+
   delimiter: [","]

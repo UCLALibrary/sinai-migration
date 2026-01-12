@@ -377,12 +377,12 @@ bibs:
   delimiter: [","]
   lookup: bibs.*
 iiif_type_id:
-  name: IIIF Manifest type
+  name: IIIF Manifest Type ID
   csv: text+
   airtable: text+
   delimiter: [","]
 iiif_type_label:
-  name: IIIF Manifest type label
+  name: IIIF Manifest Type label
   csv: text+
   airtable: text+
   delimiter: [","]
@@ -430,7 +430,7 @@ image_rights:
   csv: text
   airtable: text
 image_program_labels: 
-  name: Image Program Labels
+  name: Image Program labels
   csv: text+
   airtable: text+
   delimiter: ["|~|"]
