@@ -99,29 +99,44 @@ part_dim:
   name: Part Dimensions
   csv: text
   airtable: text
-overtext_ark:
-  name: Overtext ARKs
+layer_ark:
+  name: Layer ARK
   csv: text+
   airtable: record+
   delimiter: [","]
   lookup: layers
-overtext_label:
-  name: Overtext Labels
+layer_type_id:
+  name: Layer Type ID
   csv: text+
   airtable: text+
   delimiter: ["|~|"]
-overtext_locus:
-  name: Overtext Locus
+layer_type_label:
+  name: Layer Type Label
   csv: text+
   airtable: text+
   delimiter: ["|~|"]
-overtext_sequence:
-  name: Overtext Sequence
+layer_label:
+  name: Layer Label
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+layer_locus:
+  name: Layer Locus
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+layer_level:
+  name: Layer Level
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+layer_sequence:
+  name: Layer Sequence
   csv: text+
   airtable: text+
   delimiter: [","]
-overtext_sequence_override:
-  name: Overtext Sequence Override
+layer_sequence_override:
+  name: Layer Sequence Override
   csv: text+
   airtable: text+
   delimiter: [","]
@@ -131,47 +146,6 @@ part_paracontent:
   airtable: record+
   delimiter: [","]
   lookup: paracontents.*
-other_layer_ark:
-  name: Other Layer ARKs
-  csv: text+
-  airtable: record+
-  delimiter: [","]
-  lookup: layers
-other_layer_type_id:
-  name: Other Layer Type ID
-  csv: text+
-  airtable: text+
-  delimiter: [","]
-other_layer_type_label:
-  name: Other Layer Type Label
-  csv: text+
-  airtable: text+
-  delimiter: [","]
-other_layer_label:
-  name: Other Layer Labels
-  csv: text+
-  airtable: text+
-  delimiter: ["|~|"]
-other_layer_locus:
-  name: Other Layer Locus
-  csv: text+
-  airtable: text+
-  delimiter: ["|~|"]
-other_layer_level:
-  name: Other Layer Level
-  csv: text+
-  airtable: text+
-  delimiter: [","]
-other_layer_sequence:
-  name: Other Layer Sequence
-  csv: text+
-  airtable: text+
-  delimiter: [","]
-other_layer_sequence_override:
-  name: Other Layer Sequence Override
-  csv: text+
-  airtable: text+
-  delimiter: [","]
 part_typed_notes:
   support:
     label: Support Note

@@ -116,22 +116,23 @@ def transform_manuscript_object_fields(record, result, fields):
     result["coll"] = parse.get_data_from_field(source=record, field_config=fields['coll'])
 
 
-    other_layers = parse.get_data_from_multiple_fields(source=record, fields=fields, field_list=["other_layer_ark", "other_layer_label", "other_layer_type_id", "other_layer_type_label", "other_layer_locus", "other_layer_level", "other_layer_sequence", "other_layer_sequence_override"])
+    layers = parse.get_data_from_multiple_fields(source=record, fields=fields, field_list=["layer_ark", "layer_label", "layer_type_id", "layer_type_label", "layer_locus", "layer_level", "layer_sequence", "layer_sequence_override"])
     
     # add ms-obj level layer info
-    other_layer_field_map = {
-        "id": "other_layer_ark",
-        "label": "other_layer_label",
-        "type_id": "other_layer_type_id",
-        "type_label": "other_layer_type_label",
-        "locus": "other_layer_locus",
-        "level": "other_layer_level"
+    layer_field_map = {
+        "id": "layer_ark",
+        "label": "layer_label",
+        "type_id": "layer_type_id",
+        "type_label": "layer_type_label",
+        "locus": "layer_locus",
+        "level": "layer_level"
     }
-    # get the other layers sequence, using the override or the regular sequence field
-    other_layers_seq = other_layers["other_layer_sequence_override"] if other_layers["other_layer_sequence_override"] else other_layers["other_layer_sequence"]
-    other_layers_seq = other_layers_seq.copy() if other_layers_seq else None
+    # get the layers sequence, using the override or the regular sequence field
+    layers_seq = layers["layer_sequence_override"] if layers["layer_sequence_override"] else layers["layer_sequence"]
+    layers_seq = layers_seq.copy() if layers_seq else None
 
-    result["layer"] = transform_layer_reference_data(record=other_layers, field_map=other_layer_field_map, has_multiple_layers=isinstance(other_layers["other_layer_ark"], list), level_filter="ms", seq=other_layers_seq)
+    # add the ms layers
+    result["layer"] = transform_layer_reference_data(record=layers, field_map=layer_field_map, has_multiple_layers=isinstance(layers["layer_ark"], list), level_filter="ms", seq=layers_seq)
     
 
     related_mss = parse.get_data_from_field(source=record, field_config=fields['related_mss'])
@@ -145,7 +146,7 @@ def transform_manuscript_object_fields(record, result, fields):
         for part in parts:
             result["part"].append(transform_part_data(part_data=part))
     else:
-        result["part"] = [get_part_data_from_ms_table(record=record, fields=fields, other_layer_data=other_layers, related_mss_data=related_mss)]
+        result["part"] = [get_part_data_from_ms_table(record=record, fields=fields, layer_data=layers, related_mss_data=related_mss)]
 
     # add location info
     location_ids =  parse.get_data_from_field(source=record,field_config=fields['location_id'])
@@ -300,20 +301,20 @@ def create_associated_entities(result, record, fields):
         entity_type="date"
     )
 
-def get_part_data_from_ms_table(record, fields, other_layer_data=None, related_mss_data=None):
+def get_part_data_from_ms_table(record, fields, layer_data=None, related_mss_data=None):
     # TODO: should this be in a config somewhere???
-    part_fields = ["part_label", "part_summary", "part_locus", "part_extent", "support_id", "support_label", "part_dim", "overtext_ark", "overtext_label", "overtext_locus", "overtext_sequence", "overtext_sequence_override", "part_paracontent"]
+    part_fields = ["part_label", "part_summary", "part_locus", "part_extent", "support_id", "support_label", "part_dim", "part_paracontent"]
 
     part_notes_data = parse.get_typed_notes_data(source=record, note_fields=fields["part_typed_notes"])
 
     part_data = parse.get_data_from_multiple_fields(source=record, fields=fields, field_list=part_fields)
-    return transform_part_data(part_data, other_layer_data=other_layer_data, related_mss_data=related_mss_data, notes_data=part_notes_data)
+    return transform_part_data(part_data, layer_data=layer_data, related_mss_data=related_mss_data, notes_data=part_notes_data)
 
 """
 Transform part data into the part object needed for output
 """
 # TODO: refactor to split out some of the mess, e.g. for layers and such
-def transform_part_data(part_data, other_layer_data=None, related_mss_data=None, notes_data=None):
+def transform_part_data(part_data, layer_data=None, related_mss_data=None, notes_data=None):
     part = {}
     part["label"] = part_data["part_label"]
     part["summary"] = part_data["part_summary"]
@@ -331,52 +332,35 @@ def transform_part_data(part_data, other_layer_data=None, related_mss_data=None,
 
     part["dim"] = part_data["part_dim"]
 
-    # TODO: refactor to make this a reusable pattern, esp. the None filling
-    # TODO: also need to have a helper function for dealing with when a string should be treated as an array of 1 item but also a string sometimes...or some other way of doing this...jesus christ.
-    overtext_layer_field_map = {
-        "id": "overtext_ark",
-        "label": "overtext_label",
-        "type_id": None,
-        "type_label": None,
-        "locus": "overtext_locus"
+
+    layer_field_map = {
+        "id": "layer_ark",
+        "label": "layer_label",
+        "type_id": "layer_type_id",
+        "type_label": "layer_type_label",
+        "locus": "layer_locus",
+        "level": "layer_level"
     }
-    # get the overtext sequence, using the override if it exists or the regular otherwise
-    overtext_sequence = part_data["overtext_sequence_override"] if part_data["overtext_sequence_override"] else part_data["overtext_sequence"]
-    overtext_sequence = overtext_sequence.copy() if overtext_sequence else None
-
-    part["layer"] = transform_layer_reference_data(record=part_data,
-                                                   field_map=overtext_layer_field_map,
-                                                   has_multiple_layers=isinstance(part_data["overtext_ark"], list),
-                                                   type_override={"id": "overtext", "label": "Overtext"}, seq=overtext_sequence)
-
-    other_layer_field_map = {
-        "id": "other_layer_ark",
-        "label": "other_layer_label",
-        "type_id": "other_layer_type_id",
-        "type_label": "other_layer_type_label",
-        "locus": "other_layer_locus",
-        "level": "other_layer_level"
-    }
-
 
     # Add other layer info if it exists
-    if(other_layer_data):
+    # used when single-part data found in the ms obj table
+    if(layer_data):
 
-        other_layers_seq = other_layer_data["other_layer_sequence_override"] if other_layer_data["other_layer_sequence_override"] else other_layer_data["other_layer_sequence"]
-        other_layers_seq = other_layers_seq.copy() if other_layers_seq else None
+        layers_seq = layer_data["layer_sequence_override"] if layer_data["layer_sequence_override"] else layer_data["layer_sequence"]
+        layers_seq = layers_seq.copy() if layers_seq else None
 
-        part["layer"] += transform_layer_reference_data(record=other_layer_data,
-                                                    field_map=other_layer_field_map,
-                                                    has_multiple_layers=isinstance(other_layer_data["other_layer_ark"], list),
-                                                    level_filter="part", seq=other_layers_seq)
+        part["layer"] = transform_layer_reference_data(record=layer_data,
+                                                    field_map=layer_field_map,
+                                                    has_multiple_layers=isinstance(layer_data["layer_ark"], list),
+                                                    level_filter="part", seq=layers_seq)
     # If there is no other layer data, then see if it's in the part info already
     else:
-        other_layers_seq = part_data["other_layer_sequence_override"] if part_data["other_layer_sequence_override"] else part_data["other_layer_sequence"]
-        other_layers_seq = other_layers_seq.copy() if other_layers_seq else None
+        layers_seq = part_data["layer_sequence_override"] if part_data["layer_sequence_override"] else part_data["layer_sequence"]
+        layers_seq = layers_seq.copy() if layers_seq else None
 
-        part["layer"] += transform_layer_reference_data(record=part_data,
-                                                    field_map=other_layer_field_map,
-                                                    has_multiple_layers=isinstance(part_data["other_layer_ark"], list), seq=other_layers_seq)
+        part["layer"] = transform_layer_reference_data(record=part_data,
+                                                    field_map=layer_field_map,
+                                                    has_multiple_layers=isinstance(part_data["layer_ark"], list), level_filter="part", seq=layers_seq)
 
     # para??
     part["para"] = transform_paracontents_data(part_data["part_paracontent"])
@@ -389,7 +373,7 @@ def transform_part_data(part_data, other_layer_data=None, related_mss_data=None,
     if related_mss_data:
         part["related_mss"] = transform_related_mss_data(related_mss_data=related_mss_data, level_filter="part")
     else:
-        part["related_mss"] = transform_related_mss_data(related_mss_data=part_data.get("related_mss"), level_filter=None)
+        part["related_mss"] = transform_related_mss_data(related_mss_data=part_data.get("related_mss"), level_filter="part")
 
     return part
 
@@ -407,12 +391,13 @@ def transform_layer_reference_data(record, field_map: dict, has_multiple_layers:
         number_of_layers = len(record[field_map["id"]])
 
         for i in range(0, number_of_layers):
-            # if filtering by level, skip any that are not for part of that level
-            if level_filter and record[field_map["level"]][i] != level_filter:
-                # remove the sequence items that don't match the layer level, then skip this layer data
+            # Get the level of the layer (ms or part), default to part if empty
+            layer_level = record[field_map["level"]][i] if (record[field_map["level"]] and record[field_map["level"]][i] and record[field_map["level"]][i] != "") else "part"
+            
+            if layer_level != level_filter:
                 if(seq):
                     seq[i] = None
-                continue
+                continue 
             else:
                 if type_override:
                     layer_type = type_override
@@ -435,7 +420,9 @@ def transform_layer_reference_data(record, field_map: dict, has_multiple_layers:
             layers = order_list_by_sequence(layers, seq)
     
     else:
-        if level_filter and record[field_map["level"]] != level_filter:
+        layer_level = record[field_map["level"]] if record[field_map["level"]] else "part"
+
+        if layer_level != level_filter:
             return layers
         else:
             if type_override:
