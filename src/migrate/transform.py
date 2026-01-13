@@ -304,12 +304,12 @@ def create_associated_entities(result, record, fields):
         result["assoc_place"] = []
         for p in places:
             result["assoc_places"].append(transform_associated_entity_data(
-            arks=p["place_ark"],
-            values=p["value"],
-            as_written=p["as_written"],
-            type_id=p["type_id"],
-            type_label=p["type_label"],
-            notes=p["note"],
+            arks=[p["place_ark"]],
+            values=[p["value"]],
+            as_written=[p["as_written"]],
+            type_id=[p["type_id"]],
+            type_label=[p["type_label"]],
+            notes=[p["note"]],
             iso=None,
             entity_type="place"
         )[0])
@@ -330,12 +330,12 @@ def create_associated_entities(result, record, fields):
         for d in dates:
             result["assoc_date"].append(transform_associated_entity_data(
             arks=None,
-            values=d["value"],
-            as_written=d["as_written"],
-            type_id=d["type_id"],
-            type_label=d["type_label"],
+            values=[d["value"]],
+            as_written=[d["as_written"]],
+            type_id=[d["type_id"]],
+            type_label=[d["type_label"]],
             notes=d["note"],
-            iso=d["date_iso"],
+            iso=[d["date_iso"]],
             entity_type="date"
         )[0])
     else:
@@ -580,13 +580,13 @@ def transform_paracontents_data(paracontents_data):
         if places:
             para["assoc_place"] = []
             for p in places:
-                para["assoc_places"].append(transform_associated_entity_data(
-                arks=p["place_ark"],
-                values=p["value"],
-                as_written=p["as_written"],
-                type_id=p["type_id"],
-                type_label=p["type_label"],
-                notes=p["note"],
+                para["assoc_place"].append(transform_associated_entity_data(
+                arks=[p["place_ark"]],
+                values=[p["value"]],
+                as_written=[p["as_written"]],
+                type_id=[p["type_id"]],
+                type_label=[p["type_label"]],
+                notes=[p["note"]],
                 iso=None,
                 entity_type="place"
             )[0])
@@ -606,12 +606,12 @@ def transform_paracontents_data(paracontents_data):
                 for d in dates:
                     para["assoc_date"].append(transform_associated_entity_data(
                     arks=None,
-                    values=d["value"],
-                    as_written=d["as_written"],
-                    type_id=d["type_id"],
-                    type_label=d["type_label"],
-                    notes=d["note"],
-                    iso=d["date_iso"],
+                    values=[d["value"]],
+                    as_written=[d["as_written"]],
+                    type_id=[d["type_id"]],
+                    type_label=[d["type_label"]],
+                    notes=[d["note"]],
+                    iso=[d["date_iso"]],
                     entity_type="date"
                 )[0])
         else:
