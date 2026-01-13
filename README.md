@@ -116,3 +116,7 @@ The JSON file can be simple, e.g.:
     "airtable_api_key": "KEY GOES HERE"
 }
 ```
+
+# Table Cache
+
+The script outputs a JSON file to the output directory (see above under Table Configuration). This file is a cache of the input data tables (as parsed by the script using either CSV or Airtable mode). Such a cache can be useful in case of an error that interrupts the script, as the transform can be re-run without having to re-download or parse the input CSV or Airtable data. However, this is most commonly used for development purposes.
