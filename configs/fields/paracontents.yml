@@ -60,6 +60,12 @@ translation:
   csv: text+
   airtable: text+
   delimiter: ["|~|"]
+assoc_entities:
+  name: Associated entities
+  csv: record+
+  airtable: record+
+  delimiter: [","]
+  lookup: assoc_entities.*
 assoc_name_ark:
   name: Associated Name ARKs
   csv: text+

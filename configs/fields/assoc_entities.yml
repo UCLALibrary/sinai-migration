@@ -1,0 +1,43 @@
+entity_type:
+  name: Entity Type
+  csv: text
+  airtable: text
+sequence:
+  name: Sequence
+  csv: text
+  airtable: text
+type_id:
+  name: Type ID
+  csv: text
+  airtable: text
+type_label:
+  name: Type Label
+  csv: text
+  airtable: text
+value:
+  name: Value
+  csv: text
+  airtable: text
+as_written:
+  name: As Written
+  csv: text
+  airtable: text
+name_ark:
+  name: Name ARKs
+  csv: text+
+  airtable: text+
+  delimiter: [","]
+place_ark:
+  name: Place ARKs
+  csv: text+
+  airtable: text+
+  delimiter: [","]
+date_iso:
+  name: Date ISO
+  csv: text
+  airtable: text
+note:
+  name: Note
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]

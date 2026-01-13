@@ -42,6 +42,11 @@ tables:
     airtable: 
     fields: fields/paracontents.yml
     index_col: ID
+  assoc_entities:
+    csv: 
+    airtable: 
+    fields: fields/assoc_entities.yml
+    index_col: ID
   related_mss:
     csv: 
     airtable: 

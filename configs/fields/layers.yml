@@ -133,6 +133,12 @@ paracontent:
   airtable: record+
   delimiter: [","]
   lookup: paracontents.*
+assoc_entities:
+  name: Associated Entities
+  csv: record+
+  airtable: record+
+  delimiter: [","]
+  lookup: assoc_entities.*
 assoc_name_ark:
   name: Associated Name ARKs
   csv: text+

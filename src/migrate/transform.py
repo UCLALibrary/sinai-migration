@@ -267,39 +267,95 @@ def transform_text_unit_fields(record, result, fields):
 
 """A handle function for abstracting the associate_* creation """
 def create_associated_entities(result, record, fields):
+    # check for associated entities table records
+    entities = parse.get_data_from_field(source=record, field_config=fields["assoc_entities"])
+    names = filter_associated_entities(entities, "agent")
+    places = filter_associated_entities(entities, "place")
+    dates = filter_associated_entities(entities, "date")
+
     # Associated things
-    result["assoc_name"] = transform_associated_entity_data(
-        arks=parse.get_data_from_field(source=record, field_config=fields["assoc_name_ark"]),
-        values=parse.get_data_from_field(source=record, field_config=fields["assoc_name_value"]),
-        as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_name_as_written"]),
-        type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_name_role_id"]),
-        type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_name_role_label"]),
-        notes=parse.get_data_from_field(source=record, field_config=fields["assoc_name_note"]),
-        iso=None,
-        entity_type="name"
-    )
+    if names:
+        result["assoc_name"] = []
+        for n in names:
+            result.append(transform_associated_entity_data(
+            arks=[n["name_ark"]],
+            values=[n["value"]],
+            as_written=[n["as_written"]],
+            type_id=[n["type_id"]],
+            type_label=[n["type_label"]],
+            notes=[n["note"]],
+            iso=None,
+            entity_type="name"
+        )[0])
+        result["assoc_name"].append(n)
+    else:
+        result["assoc_name"] = transform_associated_entity_data(
+            arks=parse.get_data_from_field(source=record, field_config=fields["assoc_name_ark"]),
+            values=parse.get_data_from_field(source=record, field_config=fields["assoc_name_value"]),
+            as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_name_as_written"]),
+            type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_name_role_id"]),
+            type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_name_role_label"]),
+            notes=parse.get_data_from_field(source=record, field_config=fields["assoc_name_note"]),
+            iso=None,
+            entity_type="name"
+        )
 
-    result["assoc_place"] = transform_associated_entity_data(
-        arks=parse.get_data_from_field(source=record, field_config=fields["assoc_place_ark"]),
-        values=parse.get_data_from_field(source=record, field_config=fields["assoc_place_value"]),
-        as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_place_as_written"]),
-        type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_place_event_id"]),
-        type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_place_event_label"]),
-        notes=parse.get_data_from_field(source=record, field_config=fields["assoc_place_note"]),
-        iso=None,
-        entity_type="place"
-    )
+    if places:
+        result["assoc_place"] = []
+        for p in places:
+            result["assoc_places"].append(transform_associated_entity_data(
+            arks=p["place_ark"],
+            values=p["value"],
+            as_written=p["as_written"],
+            type_id=p["type_id"],
+            type_label=p["type_label"],
+            notes=p["note"],
+            iso=None,
+            entity_type="place"
+        )[0])
+    else:
+        result["assoc_place"] = transform_associated_entity_data(
+            arks=parse.get_data_from_field(source=record, field_config=fields["assoc_place_ark"]),
+            values=parse.get_data_from_field(source=record, field_config=fields["assoc_place_value"]),
+            as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_place_as_written"]),
+            type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_place_event_id"]),
+            type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_place_event_label"]),
+            notes=parse.get_data_from_field(source=record, field_config=fields["assoc_place_note"]),
+            iso=None,
+            entity_type="place"
+        )
 
-    result["assoc_date"] = transform_associated_entity_data(
-        arks=None,
-        values=parse.get_data_from_field(source=record, field_config=fields["assoc_date_value"]),
-        as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_date_as_written"]),
-        type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_date_type_id"]),
-        type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_date_type_label"]),
-        notes=parse.get_data_from_field(source=record, field_config=fields["assoc_date_note"]),
-        iso=parse.get_data_from_field(source=record, field_config=fields["assoc_date_iso"]),
-        entity_type="date"
-    )
+    if dates:
+        result["assoc_date"] = []
+        for d in dates:
+            result["assoc_date"].append(transform_associated_entity_data(
+            arks=None,
+            values=d["value"],
+            as_written=d["as_written"],
+            type_id=d["type_id"],
+            type_label=d["type_label"],
+            notes=d["note"],
+            iso=d["date_iso"],
+            entity_type="date"
+        )[0])
+    else:
+        result["assoc_date"] = transform_associated_entity_data(
+            arks=None,
+            values=parse.get_data_from_field(source=record, field_config=fields["assoc_date_value"]),
+            as_written=parse.get_data_from_field(source=record, field_config=fields["assoc_date_as_written"]),
+            type_id=parse.get_data_from_field(source=record, field_config=fields["assoc_date_type_id"]),
+            type_label=parse.get_data_from_field(source=record, field_config=fields["assoc_date_type_label"]),
+            notes=parse.get_data_from_field(source=record, field_config=fields["assoc_date_note"]),
+            iso=parse.get_data_from_field(source=record, field_config=fields["assoc_date_iso"]),
+            entity_type="date"
+        )
+
+def filter_associated_entities(entities, entity_type):
+    if not entities:
+        return None
+    
+    return [e for e in entities if e["entity_type"] == entity_type]
+
 
 def get_part_data_from_ms_table(record, fields, layer_data=None, related_mss_data=None):
     # TODO: should this be in a config somewhere???
@@ -491,38 +547,84 @@ def transform_paracontents_data(paracontents_data):
 
         para["translation"] = record["translation"]
 
-        para["assoc_name"] = transform_associated_entity_data(
-            arks=record["assoc_name_ark"],
-            iso=None,
-            values=record["assoc_name_value"],
-            as_written=record["assoc_name_as_written"],
-            type_id=record["assoc_name_role_id"],
-            type_label = record["assoc_name_role_label"],
-            notes=record["assoc_name_note"],
-            entity_type="name"
-        )
+        # check for associated entities table records
+        entities = record["assoc_entities"]
+        names = filter_associated_entities(entities, "agent")
+        places = filter_associated_entities(entities, "place")
+        dates = filter_associated_entities(entities, "date")
 
-        para["assoc_place"] = transform_associated_entity_data(
-            arks=record["assoc_place_ark"],
-            iso=None,
-            values=record["assoc_place_value"],
-            as_written=record["assoc_place_as_written"],
-            type_id=record["assoc_place_event_id"],
-            type_label = record["assoc_place_event_label"],
-            notes=record["assoc_place_note"],
-            entity_type="place"
-        )
-
-        para["assoc_date"] = transform_associated_entity_data(
-            arks=None,
-            iso=record["assoc_date_iso"],
-            values=record["assoc_date_value"],
-            as_written=record["assoc_date_as_written"],
-            type_id=record["assoc_date_type_id"],
-            type_label = record["assoc_date_type_label"],
-            notes=record["assoc_date_note"],
-            entity_type="date"
-        )
+        if names:
+            para["assoc_name"] = []
+            for n in names:
+                para["assoc_name"].append(transform_associated_entity_data(
+                arks=[n["name_ark"]],
+                values=[n["value"]],
+                as_written=[n["as_written"]],
+                type_id=[n["type_id"]],
+                type_label=[n["type_label"]],
+                notes=[n["note"]],
+                iso=None,
+                entity_type="name"
+            )[0])
+        else:
+            para["assoc_name"] = transform_associated_entity_data(
+                arks=record["assoc_name_ark"],
+                iso=None,
+                values=record["assoc_name_value"],
+                as_written=record["assoc_name_as_written"],
+                type_id=record["assoc_name_role_id"],
+                type_label = record["assoc_name_role_label"],
+                notes=record["assoc_name_note"],
+                entity_type="name"
+            )
+        if places:
+            para["assoc_place"] = []
+            for p in places:
+                para["assoc_places"].append(transform_associated_entity_data(
+                arks=p["place_ark"],
+                values=p["value"],
+                as_written=p["as_written"],
+                type_id=p["type_id"],
+                type_label=p["type_label"],
+                notes=p["note"],
+                iso=None,
+                entity_type="place"
+            )[0])
+        else:
+            para["assoc_place"] = transform_associated_entity_data(
+                arks=record["assoc_place_ark"],
+                iso=None,
+                values=record["assoc_place_value"],
+                as_written=record["assoc_place_as_written"],
+                type_id=record["assoc_place_event_id"],
+                type_label = record["assoc_place_event_label"],
+                notes=record["assoc_place_note"],
+                entity_type="place"
+            )
+        if dates:
+                para["assoc_date"] = []
+                for d in dates:
+                    para["assoc_date"].append(transform_associated_entity_data(
+                    arks=None,
+                    values=d["value"],
+                    as_written=d["as_written"],
+                    type_id=d["type_id"],
+                    type_label=d["type_label"],
+                    notes=d["note"],
+                    iso=d["date_iso"],
+                    entity_type="date"
+                )[0])
+        else:
+            para["assoc_date"] = transform_associated_entity_data(
+                arks=None,
+                iso=record["assoc_date_iso"],
+                values=record["assoc_date_value"],
+                as_written=record["assoc_date_as_written"],
+                type_id=record["assoc_date_type_id"],
+                type_label = record["assoc_date_type_label"],
+                notes=record["assoc_date_note"],
+                entity_type="date"
+            )
 
         para["note"] = record["note"]
 
