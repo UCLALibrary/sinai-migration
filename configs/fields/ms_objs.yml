@@ -466,17 +466,21 @@ reconstructed_from:
   lookup: ms_objs.ark
 change_log_message:
   name: Change Log Message
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
 change_log_contributor:
   name: Change Log Contributor
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|", ","]
 change_log_added_by:
   name: Change Log Added by
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
 change_log_timestamp:
   name: Change Log Timestamp
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]

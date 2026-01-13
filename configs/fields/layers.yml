@@ -312,17 +312,21 @@ parent_arks:
   delimiter: [","]
 change_log_message:
   name: Message
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
 change_log_contributor:
   name: Contributor
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|", ","]
 change_log_added_by:
   name: Added by
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
 change_log_timestamp:
   name: Timestamp
-  csv: text
-  airtable: text
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
