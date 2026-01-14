@@ -35,5 +35,12 @@ share/python-wheels/
 *.manifest
 *.spec
 
+# Repo-specific I/O
+# ignore any output JSON files
+manuscript_objects/
+layers/
+text_units/
+table_cache/
+
 # Others
 .DS_Store
