@@ -28,7 +28,6 @@ def get_data():
         elif(config.MODE == "airtable"):
             get_table_data_from_airtable(config.TABLES[table], airtable_client)
 
-# TODO: I/O error handling or ignoring optional tables?
 def get_table_data_from_csv(table_info):
     if table_info.get("csv"):
         with open(table_info["csv"]) as fh:

@@ -184,7 +184,6 @@ def transform_manuscript_object_fields(record, result, fields):
                 }
             )
 
-    # TODO: hard-code type or get from data? Multiples!
     iiif_data = parse.get_data_from_multiple_fields(source=record, fields=fields, field_list=["iiif_type_id", "iiif_type_label", "iiif_label", "iiif_manifest_url", "iiif_behavior", "iiif_text_direction", "iiif_thumbnail_url"])
     result["iiif"] = transform_iiif_data(iiif_data)
 
@@ -196,7 +195,7 @@ def transform_manuscript_object_fields(record, result, fields):
     result["image_provenance"] = {
         "program": transform_program_data(image_programs, "image") if image_programs["image_program_labels"] else None, # process program info only if there is at least one label | TODO: technically not a schema requirement, so other way around?
         "rights": image_rights
-    } # TODO: hard-code or add a config variable for the image rights statement? Or should it be a part of the spreadsheets?
+    }
 
 def transform_layer_fields(record, result, fields):
     # TODO: ? add related mss??
@@ -211,8 +210,6 @@ def transform_layer_fields(record, result, fields):
     
     result["locus"] = parse.get_data_from_field(source=record, field_config=fields['locus'])
 
-    # writing; TODO: only handles creating a single writing object...update config for locus and note to be text+, and multi-level, if needed; same with scripts...
-    # other option is to let this just be a limitation of the script that is documented, since a rare case
     writing_data = parse.get_data_from_field(source=record, field_config=fields["writing_id"])
     if writing_data and len(writing_data) > 0:
         result["writing"] = []

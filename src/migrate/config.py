@@ -20,7 +20,6 @@ AIRTABLE_BASE = ""
 AIRTABLE_USER_KEY = ""
 
 # Default metadata and image rights statements
-# TODO: does this need to be set in the config file?
 METADATA_RIGHTS = "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
 IMAGE_RIGHTS = "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
 
