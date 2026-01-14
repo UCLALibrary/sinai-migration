@@ -7,7 +7,7 @@ import pyairtable
 import pandas as pd
 import json
 import os, time
-
+import dryable
 """
 generic get data from config document that calls the airtable or pandas ones
 based on the config setting of 'mode', which is from user
@@ -82,6 +82,7 @@ def parse_airtable_url(url):
 Saves a data record in the configured output directory, with an optional sub directory declared
 Note: defaulting the sub_dir to "/" means it will ensure the working directory will end with a slash
 """
+@dryable.Dryable()
 def save_record(record, file_name, sub_dir="/"):
     save_dir = config.OUTPUT_DIR + sub_dir
     if not os.path.exists(save_dir):
@@ -92,6 +93,7 @@ def save_record(record, file_name, sub_dir="/"):
 """
 Saves the config.TABLES data as a JSON file for easy reuse, mostly for avoiding multiple calls to Airtable's APIs
 """
+@dryable.Dryable()
 def cache_wrangled_tables(sub_dir="/table_cache/"):
     save_dir = config.OUTPUT_DIR + sub_dir
     timestr = time.strftime("%Y%m%d-%H%M%S")

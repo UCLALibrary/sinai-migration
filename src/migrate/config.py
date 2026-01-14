@@ -3,6 +3,7 @@ This module contains configurations, constant variables, etc. used for the CSV t
 """
 import json, yaml, os, sys
 from migrate import user
+import dryable
 
 # CONSTANTS
 
@@ -56,6 +57,9 @@ def set_configs(args):
     if(args.output):
         global OUTPUT_DIR
         OUTPUT_DIR = args.output
+
+    # Check the dry-run flag
+    dryable.set(args.dryrun)
 
 def set_mode(mode):
     global MODE

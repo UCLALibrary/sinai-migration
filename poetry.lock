@@ -148,6 +148,20 @@ files = [
 ]
 
 [[package]]
+name = "dryable"
+version = "1.2.0"
+description = "provide --dry-run functionality for your application"
+optional = false
+python-versions = "*"
+groups = ["main"]
+files = [
+    {file = "dryable-1.2.0-py3-none-any.whl", hash = "sha256:193c89bf76785046d4b473a00216c76c5d1cbd06ea858621419fcb89889edd4c"},
+]
+
+[package.extras]
+testing = ["pytest"]
+
+[[package]]
 name = "idna"
 version = "3.11"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -795,4 +809,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9"
-content-hash = "b517c2c5577f1a088284079bd68a8932dfcd72a73a130257a6ff732c352ed9d8"
+content-hash = "539df850398acd5b67f476229b77e72e5d6545353f38acc1aa1d689113dfd870"
