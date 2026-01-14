@@ -69,11 +69,10 @@ The primary purpose of the Table Configuration file is to indicate the location 
 
 The following keys are permitted for each table type:
 
-- `csv`: the path to the CSV file, required if using csv mode
+- `csv`: the path to the CSV file, required if using csv mode. Accepts either absolute paths or relative paths (relative to the directory where the table configuration file is found)
 - `airtable`: the URL of the Airtable table, or of a specific view. Required if using airtable mode
-- `fields`: the relative path to the sub-directory containing the field configurations for this table (see below, under Field Configurations)
+- `fields`: the path to the sub-directory containing the field configurations for this table (see below, under Field Configurations). Accepts either absolute paths or relative paths (relative to the directory where the table configuration file is found)
 - `index_col`: This field sets which column contains the unique identifier for the tables' rows. It is required, when using CSV mode, for any table that is referenced from another (e.g., a manuscript object referencing records in the parts table).
-
 
 Most commonly, changes to configurations will only be to the `csv` or `airtable` parameters.
 
@@ -104,6 +103,8 @@ Typed notes are an exception to this rule, allowing extensible lists of note typ
 
 
 # Airtable Mode
+
+_Not currently supported_
 
 Additional information is required to run the script in Airtable mode.
 
