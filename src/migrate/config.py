@@ -68,10 +68,20 @@ def set_table_configs(file_path):
         AIRTABLE_BASE = data["airtable_base"]
         global TABLES
         TABLES = data["tables"]
+        # Resolve any relative paths against the 
+        resolve_relative_csv_paths(TABLES, os.path.dirname(file_path), "csv")
+
+# Given a base directory, resolves the relative paths against that base directory
+def resolve_relative_csv_paths(tables, base_dir, field_name):
+    for table_name in tables:
+        if not(tables[table_name][field_name]) or tables[table_name][field_name].startswith("/"):
+            continue
+        tables[table_name][field_name] = base_dir + "/" + tables[table_name][field_name]
 
 def set_field_configs(base_dir):
     global TABLES
+    resolve_relative_csv_paths(TABLES, base_dir, "fields")
     for table_name in TABLES:
-        with open(base_dir + "/" + TABLES[table_name]["fields"]) as fh:
+        with open(TABLES[table_name]["fields"]) as fh:
             field_data = yaml.safe_load(fh)
             TABLES[table_name]["fields"] = field_data
