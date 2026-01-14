@@ -24,11 +24,12 @@ The most important/common ones are:
 - mode (`-m`/`--mode`), required. Must be either 'csv' or 'airtable'. Sets whether data will be loaded from CSV files or downloaded from the Airtable API. See below, under Configuration, for more info
 - config directory (`-c`/`--config`), required. The absolute file path to the directory containing the configuration files (table config and field configs). See below, under Configuration, for more info on the contents of this directory.
 - output directory (`-o`/`--output`), optional. Specify the directory where JSON data records should be saved; if not included it will default to the current working directory. (Note that record types will be saved in sub-directories of the specified path named based on their record type, e.g. `/foo/bar/layers/`)
+- dryrun (`--dryrun`), optional flag. The script will run transformations without saving any files to disk.
 
 
 The full list of options is as follows:
 ```
-usage: Sinai Portal Migration Script [-h] -m {airtable,csv} [-c CONFIG] [--interactive] [-o OUTPUT] [-t TABLECACHE] {manuscript_objects,layers,text_units,all}
+usage: Sinai Portal Migration Script [-h] -m {airtable,csv} [-c CONFIG] [--interactive] [-o OUTPUT] [-t TABLECACHE] [--dryrun] {manuscript_objects,layers,text_units,all}
 
 A command line utility for migrating Sinai manuscripts metadata from Airtable or CSVs to Sinai Data Portal-compliant JSON records
 
@@ -47,7 +48,8 @@ optional arguments:
                         Set the directory where output JSON records should be stored; default is the current working directory
   -t TABLECACHE, --tablecache TABLECACHE
                         A path to a JSON file representing a cached version of the data tables used in the transform. Useful for re-running Airtable data without redownloading if nothing has changed
-```
+  --dryrun              Run the script without saving files to disk
+  ```
 
 Note: `--interactive` is not yet supported
 
