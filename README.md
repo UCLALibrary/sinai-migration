@@ -129,3 +129,25 @@ The JSON file can be simple, e.g.:
 # Table Cache
 
 The script outputs a JSON file to the output directory (see above under Table Configuration). This file is a cache of the input data tables (as parsed by the script using either CSV or Airtable mode). Such a cache can be useful in case of an error that interrupts the script, as the transform can be re-run without having to re-download or parse the input CSV or Airtable data. However, this is most commonly used for development purposes.
+
+
+# Development Notes
+
+The below offer basic guidance for updating or extending the script beyond the configurations listed above.
+
+The code is divided into a few modules, all part of the `migrate` package:
+- config.py contains many constants that are either default values or initialized by the data in the configuration YAML files.
+  - The config file contains, as well, a list of JSON properties for each record type in their preferred order. This is used by the transform.py module to reorder keys before saving to JSON.
+- wrangle.py contains the logic for data input, as well as the initial transformations of the CSV or Airtable data into a unified input data format (via Pandas or the Airtable API, respectively). Note that at present the Airtable mode is not fully supported.
+		- this module also handles any file writing, such as saving data records or validation logs.
+- parse.py provides a unified mechanism for converting the text of the data fields into an intermediate data format based on the expected type of data (as defined in the field configurations, i.e. text, text+, record, or record+).
+		- Note that the Airtable mode has not been fully tested, and the return of field types as arrays vs text are inconsistent. This proved the main roadblock for fully implementing Airtable mode.
+- transform.py contains the logic for turning the input data into Portal JSON records, and as such is the largest of the modules. There is a function for transforming fields shared between all record types, as well as ones for individual fields needed for ms, layer, and text units. Additional functions provide transformation of the complex sub-objects (e.g., paracontents, parts, etc.). As well, there utility functions for this transformation process.
+  - Given the scope of this module, attempts to keep it clean and organized were not wholly successful.
+- validate.py handles the 
+- user.py handles the interactions with the user via input prompts, mainly for error-recovery purposes such as when invalid input options are provided, though this is not true of all error states...
+
+
+In addition, the main.py script is the driver script and current point of entry for the application. This script defines the command line options available (using the argparse module), sets the configurations needed by the migration script, and calls the main wrangle and transform functions.
+
+Some basic logging was implemented via the logging modules, and a dryrun option was added using dryable.

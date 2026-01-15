@@ -57,20 +57,15 @@ if __name__ == "__main__":
     parser.add_argument('--dryrun',
                         help="Run the script without saving files to disk",
                         action='store_true')
-    parser.add_argument(
-        '-d', '--debug',
-        help="Print all debug, warning, and info statements",
-        action="store_const", dest="loglevel", const=logging.DEBUG,
-        default=logging.WARNING,
+    parser.add_argument('-d', '--debug',
+                        help="Print all debug, warning, and info statements",
+                        action="store_const", dest="loglevel", const=logging.DEBUG,
+                        default=logging.WARNING,
     )
-    parser.add_argument(
-        '--verbose',
-        help="Print additional information besides warnings and errors",
-        action="store_const", dest="loglevel", const=logging.INFO,
+    parser.add_argument('--verbose',
+                        help="Print additional information besides warnings and errors",
+                        action="store_const", dest="loglevel", const=logging.INFO,
     )
     args = parser.parse_args()
 
     main(args)
-"""
-
-"""
