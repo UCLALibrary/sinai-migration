@@ -48,6 +48,9 @@ def transform_single_record(record, record_type, fields):
     notes_data = parse.get_typed_notes_data(source=record, note_fields=fields['typed_notes'])
     result["notes"] = transform_notes_data(notes_data)
 
+    # Associated entities, now allowed at all levels
+    create_associated_entities(result, record, fields)
+
     # Add features; will throw an error if for some reason the id/label lengths are mismatched
     features = []
     feature_ids = parse.get_data_from_field(source=record, field_config=fields['feature_id'])
@@ -173,8 +176,7 @@ def transform_manuscript_object_fields(record, result, fields):
             }
         )
 
-    # Add the associated entities (ms and layers only)
-    create_associated_entities(result, record, fields)
+
     # Add viscodex
     # TODO: move to its own function
     viscodex_type_id = parse.get_data_from_field(source=record, field_config=fields['viscodex_type_id'])
@@ -245,9 +247,6 @@ def transform_layer_fields(record, result, fields):
     tu_seq = tu_seq.copy() if tu_seq else None
 
     result["text_unit"] = transform_text_unit_reference_data(text_unit_reference_data, seq=tu_seq)
-
-    # Add the associated entities (ms and layers only)
-    create_associated_entities(result, record, fields)
 
     result["parent"] = parse.get_data_from_field(source=record, field_config=fields['parent_arks'])
 
