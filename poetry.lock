@@ -189,6 +189,27 @@ files = [
 ]
 
 [[package]]
+name = "jschon"
+version = "0.11.1"
+description = "A JSON toolkit for Python developers."
+optional = false
+python-versions = "~=3.8"
+groups = ["main"]
+files = [
+    {file = "jschon-0.11.1-py3-none-any.whl", hash = "sha256:2350e8b6747b17358022960f91208bea70de448b914827af3184d30e20500f0f"},
+    {file = "jschon-0.11.1.tar.gz", hash = "sha256:c0ca0beab1f1694a03d726b91ed75ec604a7787af3ae91ead765f78215bf149f"},
+]
+
+[package.dependencies]
+rfc3986 = "*"
+
+[package.extras]
+dev = ["coverage", "hypothesis (<6.0.4)", "pytest", "pytest-benchmark", "pytest-httpserver", "requests"]
+doc = ["sphinx", "sphinx-rtd-theme"]
+requests = ["requests"]
+test = ["tox"]
+
+[[package]]
 name = "numpy"
 version = "2.0.2"
 description = "Fundamental package for array computing in Python"
@@ -738,6 +759,21 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use-chardet-on-py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
+name = "rfc3986"
+version = "2.0.0"
+description = "Validating URI References per RFC 3986"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "rfc3986-2.0.0-py2.py3-none-any.whl", hash = "sha256:50b1502b60e289cb37883f3dfd34532b8873c7de9f49bb546641ce9cbd256ebd"},
+    {file = "rfc3986-2.0.0.tar.gz", hash = "sha256:97aacf9dbd4bfd829baad6e6309fa6573aaf1be3f6fa735c8ab05e46cecb261c"},
+]
+
+[package.extras]
+idna2008 = ["idna"]
+
+[[package]]
 name = "six"
 version = "1.17.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -808,5 +844,5 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.9"
-content-hash = "539df850398acd5b67f476229b77e72e5d6545353f38acc1aa1d689113dfd870"
+python-versions = ">=3.9,<4.0"
+content-hash = "c092eca87b2e390124c18cfd26a5859589aa60fd1a378ac18699b99c742538cb"
