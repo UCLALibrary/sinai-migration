@@ -26,6 +26,8 @@ The most important/common ones are:
 - output directory (`-o`/`--output`), optional. Specify the directory where JSON data records should be saved; if not included it will default to the current working directory. (Note that record types will be saved in sub-directories of the specified path named based on their record type, e.g. `/foo/bar/layers/`)
 - enable validation (`-v`/`--validate`), optional flag. When present the script will validate transformed records against the associated schema, and log the errors for any invalid records in a JSON file (saved to the output directory within a `validation-errors` subdirectory)
 - dryrun (`--dryrun`), optional flag. The script will run transformations without saving any files to disk.
+- verbose (`--verbose`), optional flag. The script will print more detailed logging information, such as the status of each file throughout the process. By default, the script only reports warnings on invalid files (if `--validate` is set)
+- debug (`--debug`), optional flag. The script prints additional debugging information to the terminal.
 
 
 The full list of options is as follows:
@@ -51,6 +53,8 @@ optional arguments:
                         A path to a JSON file representing a cached version of the data tables used in the transform. Useful for re-running Airtable data without redownloading if nothing has changed
   -v, --validate        Validate all transformed records against the record types' schema. A record of invalid files and their errors will be saved to the output directory
   --dryrun              Run the script without saving files to disk
+  -d, --debug           Print all debug, warning, and info statements
+  --verbose             Print additional information besides warnings and errors
   ```
 
 Note: `--interactive` is not yet supported
