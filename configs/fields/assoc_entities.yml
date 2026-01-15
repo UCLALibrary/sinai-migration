@@ -24,14 +24,12 @@ as_written:
   airtable: text
 name_ark:
   name: Name ARKs
-  csv: text+
-  airtable: text+
-  delimiter: [","]
+  csv: text
+  airtable: text
 place_ark:
   name: Place ARKs
-  csv: text+
-  airtable: text+
-  delimiter: [","]
+  csv: text
+  airtable: text
 date_iso:
   name: Date ISO
   csv: text
