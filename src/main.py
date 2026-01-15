@@ -50,6 +50,9 @@ if __name__ == "__main__":
                         help="Set the directory where output JSON records should be stored; default is the current working directory")
     parser.add_argument('-t', '--tablecache',
                         help="A path to a JSON file representing a cached version of the data tables used in the transform. Useful for re-running Airtable data without redownloading if nothing has changed")
+    parser.add_argument('-v', '--validate',
+                        help="Validate all transformed records against the record types' schema. A record of invalid files and their errors will be saved to the output directory",
+                        action='store_true')
     parser.add_argument('--dryrun',
                         help="Run the script without saving files to disk",
                         action='store_true')

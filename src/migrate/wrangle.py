@@ -108,3 +108,12 @@ def use_cached_tables(path_to_table_cache):
     with open(path_to_table_cache) as fh:
         tables = json.load(fh)
         config.TABLES = tables
+
+@dryable.Dryable()
+def save_validation_errors(log, sub_dir, filename_prexif):
+    save_dir = config.OUTPUT_DIR + sub_dir
+    filename = filename_prexif + "_validation_errors.json"
+    if not os.path.exists(save_dir):
+        os.makedirs(save_dir)
+    with open(save_dir+filename, mode="w") as fh:
+        json.dump(log, fh, indent=2, ensure_ascii=False)

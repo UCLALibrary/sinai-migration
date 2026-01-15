@@ -3,7 +3,7 @@ This module contains configurations, constant variables, etc. used for the CSV t
 """
 import json, yaml, os, sys
 from migrate import user
-import dryable
+import dryable, jschon
 
 # CONSTANTS
 
@@ -32,6 +32,20 @@ LAYER_FIELD_ORDER = ["ark", "reconstruction", "state", "label", "locus", "summar
 
 TEXT_UNIT_FIELD_ORDER = ["ark", "reconstruction", "label", "summary", "locus", "lang", "work_wit", "para", "features", "note", "bib", "desc_provenance", "cataloguer", "reconstructed_from", "parent", "internal"]
 
+# Validation related constants and configurations
+
+PERFORM_VALIDATION = False
+
+SCHEMA_URLS = {
+    "manuscript_objects": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/ms_obj.compiled.json',
+    "layers": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/layer.compiled.json',
+    "text_units": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/text_unit.compiled.json',
+    "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json',
+    "works": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/work.compiled.json',
+    "smdl": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/smdl.json'
+}
+
+SCHEMA_CATALOG = None
 
 def set_configs(args):
     # set the global MODE config variable based on the arguments
@@ -58,8 +72,14 @@ def set_configs(args):
         global OUTPUT_DIR
         OUTPUT_DIR = args.output
 
-    # Check the dry-run flag
-    dryable.set(args.dryrun)
+    # If validate records is set to true, set the JSON Schema version
+    global PERFORM_VALIDATION
+    PERFORM_VALIDATION = args.validate
+    if PERFORM_VALIDATION:
+        global SCHEMA_CATALOG
+        SCHEMA_CATALOG = jschon.create_catalog('2020-12')
+        # Check the dry-run flag
+        dryable.set(args.dryrun)
 
 def set_mode(mode):
     global MODE

@@ -4,21 +4,32 @@ This module holds the main logic for converting records into Portal JSON files
 import migrate.config as config
 import migrate.parse as parse
 import migrate.wrangle as wrangle
+import migrate.validate as validate
 import json, traceback
 
 # the main transformation function
 def transform_records(table_name: str):
     main_table = config.TABLES[table_name] # TODO: raise exception if not in main table types?
+    if config.PERFORM_VALIDATION:
+        json_schema = validate.initialize_schema(table_name)
+        validation_errors = []
     for record in main_table["data"]:
         try:
             transformed_record = transform_single_record(record=main_table["data"].get(record), 
                                                      record_type=table_name,
                                                      fields=config.TABLES[table_name]["fields"])
+            # Validate record, and add to list of errors if invalid
+            if config.PERFORM_VALIDATION:
+                validation_result = validate.validate_record(record=transformed_record, schema=json_schema)
+            if config.PERFORM_VALIDATION and validation_result:
+                validation_errors.append(validation_result)
             wrangle.save_record(record=transformed_record, file_name=transformed_record["ark"][10:], sub_dir="/"+table_name+"/")
         except Exception as e:
             print(f"Error encountered in {table_name} record with ARK {parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])}")
             print(e)
             traceback.print_exc()
+    if config.PERFORM_VALIDATION:
+        wrangle.save_validation_errors(log=validation_errors, sub_dir="/validation-errors/", filename_prexif=table_name)
 
 def transform_single_record(record, record_type, fields):
 
