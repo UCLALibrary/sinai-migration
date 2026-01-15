@@ -5,30 +5,40 @@ import migrate.config as config
 import migrate.parse as parse
 import migrate.wrangle as wrangle
 import migrate.validate as validate
-import json, traceback
+import json, traceback, logging
 
 # the main transformation function
 def transform_records(table_name: str):
     main_table = config.TABLES[table_name] # TODO: raise exception if not in main table types?
+    logging.info(f'Transforming records for {table_name}')
     if config.PERFORM_VALIDATION:
         json_schema = validate.initialize_schema(table_name)
         validation_errors = []
     for record in main_table["data"]:
+        ark = parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])
+        logging.info(f'Processing record {ark}...')
         try:
             transformed_record = transform_single_record(record=main_table["data"].get(record), 
                                                      record_type=table_name,
                                                      fields=config.TABLES[table_name]["fields"])
+            logging.info(f'- Record {ark} transformed')
             # Validate record, and add to list of errors if invalid
             if config.PERFORM_VALIDATION:
+                logging.info(f'- Validating record {ark}...')
                 validation_result = validate.validate_record(record=transformed_record, schema=json_schema)
+                if validation_result:
+                    logging.warning(f'- Record {ark} is invalid, see validation log details on validation errors.')
+                else:
+                    logging.info(f'- Record {ark} is valid.')
             if config.PERFORM_VALIDATION and validation_result:
                 validation_errors.append(validation_result)
             wrangle.save_record(record=transformed_record, file_name=transformed_record["ark"][10:], sub_dir="/"+table_name+"/")
         except Exception as e:
-            print(f"Error encountered in {table_name} record with ARK {parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])}")
-            print(e)
+            logging.error(f"Error encountered in {table_name} record with ARK {parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])}")
+            logging.erro(e)
             traceback.print_exc()
     if config.PERFORM_VALIDATION:
+        logging.warn(f"{len(validation_errors)} {table_name} record(s) contain validation errors. See validation log for more details.")
         wrangle.save_validation_errors(log=validation_errors, sub_dir="/validation-errors/", filename_prexif=table_name)
 
 def transform_single_record(record, record_type, fields):

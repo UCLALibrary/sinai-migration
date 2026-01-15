@@ -6,7 +6,7 @@ import migrate.config as config
 import pyairtable
 import pandas as pd
 import json
-import os, time
+import os, time, logging
 import dryable
 """
 generic get data from config document that calls the airtable or pandas ones
@@ -18,9 +18,9 @@ it should set or add to a variable from config with the data itself?
 TODO: consider if should return and set rather than return null and set as side effect?
 """
 def get_data():
-    print("Getting data")
+    logging.info("Getting data")
     if config.MODE == "airtable":
-        print("Retrieving data from Airtable")
+        logging.info("Retrieving data from Airtable")
         airtable_client = pyairtable.Api(config.AIRTABLE_USER_KEY)
     for table in config.TABLES:
         if(config.MODE == "csv"):
@@ -49,7 +49,7 @@ def get_table_data_from_csv(table_info):
 def get_table_data_from_airtable(table_info, airtable_client):
     # get and parse the URL into the base, table, and view keys
     url = table_info["airtable"]
-    print(f"getting Airtable data for {url}")
+    logging.info(f"getting Airtable data for {url}")
     base_key, table_key, view_key = parse_airtable_url(url)
     # TODO: Check base_key against config.AIRTABLE_BASE
     
@@ -85,6 +85,7 @@ Note: defaulting the sub_dir to "/" means it will ensure the working directory w
 @dryable.Dryable()
 def save_record(record, file_name, sub_dir="/"):
     save_dir = config.OUTPUT_DIR + sub_dir
+    logging.info(f'\t- Saving record {record["ark"]} to disk. Filepath: {save_dir + file_name + ".json"}')
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     with open(save_dir+file_name+".json", mode="w") as fh:
@@ -104,7 +105,7 @@ def cache_wrangled_tables(sub_dir="/table_cache/"):
         json.dump(config.TABLES, fh, indent=2, ensure_ascii=False)
 
 def use_cached_tables(path_to_table_cache):
-    print("Loading cached table data")
+    logging.info("Loading cached table data")
     with open(path_to_table_cache) as fh:
         tables = json.load(fh)
         config.TABLES = tables
@@ -113,6 +114,7 @@ def use_cached_tables(path_to_table_cache):
 def save_validation_errors(log, sub_dir, filename_prexif):
     save_dir = config.OUTPUT_DIR + sub_dir
     filename = filename_prexif + "_validation_errors.json"
+    logging.info(f"Validation file saved to {save_dir+filename}")
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     with open(save_dir+filename, mode="w") as fh:

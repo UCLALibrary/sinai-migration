@@ -4,6 +4,7 @@ This module contains configurations, constant variables, etc. used for the CSV t
 import json, yaml, os, sys
 from migrate import user
 import dryable, jschon
+import logging
 
 # CONSTANTS
 
@@ -47,6 +48,8 @@ SCHEMA_URLS = {
 
 SCHEMA_CATALOG = None
 
+
+
 def set_configs(args):
     # set the global MODE config variable based on the arguments
     set_mode(args.mode)
@@ -80,6 +83,9 @@ def set_configs(args):
         SCHEMA_CATALOG = jschon.create_catalog('2020-12')
         # Check the dry-run flag
         dryable.set(args.dryrun)
+    
+    # set logging level, defaults to warning
+    logging.basicConfig(level=args.loglevel, format='%(levelname)s:%(message)s')
 
 def set_mode(mode):
     global MODE
