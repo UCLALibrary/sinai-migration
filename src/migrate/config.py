@@ -11,6 +11,8 @@ import logging
 VALID_MODES = ["airtable", "csv"]
 VALIED_RECORD_TYPES = ["manuscript_objects", "layers", "text_units", "all"] # Note: "all" will transform all record types at once
 
+DRYRUN = False
+
 # Output directory defaults to the current working directory
 OUTPUT_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
 
@@ -81,11 +83,17 @@ def set_configs(args):
     if PERFORM_VALIDATION:
         global SCHEMA_CATALOG
         SCHEMA_CATALOG = jschon.create_catalog('2020-12')
-        # Check the dry-run flag
-        dryable.set(args.dryrun)
+    # Check the dry-run flag
+    global DRYRUN
+    DRYRUN = args.dryrun
+    dryable.set(args.dryrun)
+    if args.dryrun:
+        print("Script set to dryrun mode, no data will be saved to disk and validation will be skpped.")
+        logging.info("Script set to dryrun mode, no data will be saved to disk and validation will be skipped.")
     
     # set logging level, defaults to warning
     logging.basicConfig(level=args.loglevel, format='%(levelname)s:%(message)s')
+    dryable.Dryable.logger.setLevel(args.loglevel)
 
 def set_mode(mode):
     global MODE

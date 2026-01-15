@@ -35,10 +35,11 @@ def transform_records(table_name: str):
             wrangle.save_record(record=transformed_record, file_name=transformed_record["ark"][10:], sub_dir="/"+table_name+"/")
         except Exception as e:
             logging.error(f"Error encountered in {table_name} record with ARK {parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])}")
-            logging.erro(e)
+            logging.error(e)
             traceback.print_exc()
     if config.PERFORM_VALIDATION:
-        logging.warn(f"{len(validation_errors)} {table_name} record(s) contain validation errors. See validation log for more details.")
+        if not config.DRYRUN:
+            logging.warn(f"{len(validation_errors)} {table_name} record(s) contain validation errors. See validation log for more details.")
         wrangle.save_validation_errors(log=validation_errors, sub_dir="/validation-errors/", filename_prexif=table_name)
 
 def transform_single_record(record, record_type, fields):

@@ -4,13 +4,13 @@ import migrate.config as config
 '''
 CONSTANTS
 '''
-@dryable.Dryable()
+@dryable.Dryable(logging_msg='Skipping {function} (--dryrun)')
 def initialize_schema(record_type):
     schema_url = config.SCHEMA_URLS[record_type]
     schema_json = requests.get(schema_url).json()
     return jschon.JSONSchema(schema_json)
 
-@dryable.Dryable()
+@dryable.Dryable(logging_msg='Skipping {function}, no schema initialized (--dryrun)')
 def validate_record(record, schema):
     result = schema.evaluate(jschon.json.JSON(record))
     # only include invalid ones

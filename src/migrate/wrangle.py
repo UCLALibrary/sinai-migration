@@ -82,7 +82,7 @@ def parse_airtable_url(url):
 Saves a data record in the configured output directory, with an optional sub directory declared
 Note: defaulting the sub_dir to "/" means it will ensure the working directory will end with a slash
 """
-@dryable.Dryable()
+@dryable.Dryable(logging_msg='Skipping {function} (--dryrun)')
 def save_record(record, file_name, sub_dir="/"):
     save_dir = config.OUTPUT_DIR + sub_dir
     logging.info(f'\t- Saving record {record["ark"]} to disk. Filepath: {save_dir + file_name + ".json"}')
@@ -94,7 +94,7 @@ def save_record(record, file_name, sub_dir="/"):
 """
 Saves the config.TABLES data as a JSON file for easy reuse, mostly for avoiding multiple calls to Airtable's APIs
 """
-@dryable.Dryable()
+@dryable.Dryable(logging_msg='Skipping {function} (--dryrun)')
 def cache_wrangled_tables(sub_dir="/table_cache/"):
     save_dir = config.OUTPUT_DIR + sub_dir
     timestr = time.strftime("%Y%m%d-%H%M%S")
@@ -110,7 +110,7 @@ def use_cached_tables(path_to_table_cache):
         tables = json.load(fh)
         config.TABLES = tables
 
-@dryable.Dryable()
+@dryable.Dryable(logging_msg='Skipping {function} (--dryrun)')
 def save_validation_errors(log, sub_dir, filename_prexif):
     save_dir = config.OUTPUT_DIR + sub_dir
     filename = filename_prexif + "_validation_errors.json"
