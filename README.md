@@ -24,6 +24,7 @@ The most important/common ones are:
 - mode (`-m`/`--mode`), required. Must be either 'csv' or 'airtable'. Sets whether data will be loaded from CSV files or downloaded from the Airtable API. See below, under Configuration, for more info
 - config directory (`-c`/`--config`), required. The absolute file path to the directory containing the configuration files (table config and field configs). See below, under Configuration, for more info on the contents of this directory.
 - output directory (`-o`/`--output`), optional. Specify the directory where JSON data records should be saved; if not included it will default to the current working directory. (Note that record types will be saved in sub-directories of the specified path named based on their record type, e.g. `/foo/bar/layers/`)
+- enable validation (`-v`/`--validate`), optional flag. When present the script will validate transformed records against the associated schema, and log the errors for any invalid records in a JSON file (saved to the output directory within a `validation-errors` subdirectory)
 - dryrun (`--dryrun`), optional flag. The script will run transformations without saving any files to disk.
 
 
@@ -48,6 +49,7 @@ optional arguments:
                         Set the directory where output JSON records should be stored; default is the current working directory
   -t TABLECACHE, --tablecache TABLECACHE
                         A path to a JSON file representing a cached version of the data tables used in the transform. Useful for re-running Airtable data without redownloading if nothing has changed
+  -v, --validate        Validate all transformed records against the record types' schema. A record of invalid files and their errors will be saved to the output directory
   --dryrun              Run the script without saving files to disk
   ```
 
