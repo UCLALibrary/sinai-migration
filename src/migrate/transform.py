@@ -78,7 +78,12 @@ def transform_single_record(record, record_type, fields):
 
     # Paracontents
     paracontents_data = parse.get_data_from_field(source=record, field_config=fields["paracontent"])
-    result["para"] = transform_paracontents_data(paracontents_data)
+
+    # if an ms obj, use the 
+    para_level = None
+    if record_type == "manuscript_objects":
+        para_level = "ms"
+    result["para"] = transform_paracontents_data(paracontents_data, level_filter=para_level)
 
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     
@@ -103,7 +108,7 @@ def transform_single_record(record, record_type, fields):
         result["cataloguer"] = transform_change_log_data(change_log)
 
     if(record_type == "manuscript_objects"):
-        transform_manuscript_object_fields(record, result, fields)
+        transform_manuscript_object_fields(record, result, fields, paracontents_data=paracontents_data)
         result = {k: result.get(k) for k in config.MS_OBJ_FIELD_ORDER}
     if(record_type == "layers"):
         transform_layer_fields(record, result, fields)
@@ -116,7 +121,7 @@ def transform_single_record(record, record_type, fields):
 
 # This function handles the ms-obj-specific transforms
 # A result object should be passed in, which is the current record being transformed
-def transform_manuscript_object_fields(record, result, fields):
+def transform_manuscript_object_fields(record, result, fields, paracontents_data=None):
 
     result['type'] = {
         "id": parse.get_data_from_field(source=record, field_config=fields['type_id']),
@@ -171,7 +176,7 @@ def transform_manuscript_object_fields(record, result, fields):
         for part in parts:
             result["part"].append(transform_part_data(part_data=part))
     else:
-        result["part"] = [get_part_data_from_ms_table(record=record, fields=fields, layer_data=layers, related_mss_data=related_mss)]
+        result["part"] = [get_part_data_from_ms_table(record=record, fields=fields, layer_data=layers, related_mss_data=related_mss, paracontents_data=paracontents_data)]
 
     # add location info
     location_ids =  parse.get_data_from_field(source=record,field_config=fields['location_id'])
@@ -375,20 +380,20 @@ def filter_associated_entities(entities, entity_type):
     return [e for e in entities if e["entity_type"] == entity_type]
 
 
-def get_part_data_from_ms_table(record, fields, layer_data=None, related_mss_data=None):
+def get_part_data_from_ms_table(record, fields, layer_data=None, related_mss_data=None, paracontents_data=None):
     # TODO: should this be in a config somewhere???
-    part_fields = ["part_label", "part_summary", "part_locus", "part_extent", "support_id", "support_label", "part_dim", "part_paracontent"]
+    part_fields = ["part_label", "part_summary", "part_locus", "part_extent", "support_id", "support_label", "part_dim"]
 
     part_notes_data = parse.get_typed_notes_data(source=record, note_fields=fields["part_typed_notes"])
 
     part_data = parse.get_data_from_multiple_fields(source=record, fields=fields, field_list=part_fields)
-    return transform_part_data(part_data, layer_data=layer_data, related_mss_data=related_mss_data, notes_data=part_notes_data)
+    return transform_part_data(part_data, layer_data=layer_data, related_mss_data=related_mss_data, notes_data=part_notes_data, paracontents_data=paracontents_data)
 
 """
 Transform part data into the part object needed for output
 """
 # TODO: refactor to split out some of the mess, e.g. for layers and such
-def transform_part_data(part_data, layer_data=None, related_mss_data=None, notes_data=None):
+def transform_part_data(part_data, layer_data=None, related_mss_data=None, paracontents_data=None, notes_data=None):
     part = {}
     part["label"] = part_data["part_label"]
     part["summary"] = part_data["part_summary"]
@@ -436,8 +441,12 @@ def transform_part_data(part_data, layer_data=None, related_mss_data=None, notes
                                                     field_map=layer_field_map,
                                                     has_multiple_layers=isinstance(part_data["layer_ark"], list), level_filter="part", seq=layers_seq)
 
-    # para??
-    part["para"] = transform_paracontents_data(part_data["part_paracontent"])
+    # use the ms-level paracontents data for single-part)
+    if(paracontents_data):
+        part["para"] = transform_paracontents_data(paracontents_data, level_filter="part")
+    # otherwise use the data from the row in the parts table
+    else:
+        part["para"] = transform_paracontents_data(part_data.get("paracontent"))
 
     if(notes_data):
         part["note"] = transform_notes_data(notes_data)
@@ -516,7 +525,7 @@ def transform_layer_reference_data(record, field_map: dict, has_multiple_layers:
                 )
     return layers
 
-def transform_paracontents_data(paracontents_data):
+def transform_paracontents_data(paracontents_data, level_filter=None):
     paracontents = []
 
     # dump out if empty
@@ -524,6 +533,9 @@ def transform_paracontents_data(paracontents_data):
         return paracontents
     
     for record in paracontents_data:
+        # if declared level filter, skip any not for that level
+        if level_filter and record["level"] != level_filter:
+            continue
         para = {}
         para_type = {
             "id": record["type_id"],

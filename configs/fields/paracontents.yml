@@ -6,6 +6,10 @@ type_label:
   name: Type Label
   csv: text
   airtable: text
+level:
+  name: level
+  csv: text
+  airtable: text
 subtype_id:
   name: Subtype IDs
   csv: text+

@@ -140,12 +140,6 @@ layer_sequence_override:
   csv: text+
   airtable: text+
   delimiter: [","]
-part_paracontent:
-  name: Part Paracontents
-  csv: record+
-  airtable: record+
-  delimiter: [","]
-  lookup: paracontents.*
 part_typed_notes:
   support:
     label: Support Note
@@ -160,7 +154,7 @@ part_typed_notes:
     airtable: text+
     delimiter: ["|~|"]
 paracontent:
-  name: MS Paracontents
+  name: Paracontents
   csv: record+
   airtable: record+
   delimiter: [","]

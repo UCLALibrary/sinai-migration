@@ -83,8 +83,8 @@ part_typed_notes:
     csv: text+
     airtable: text+
     delimiter: ["|~|"]
-part_paracontent:
-  name: Part Paracontents
+paracontent:
+  name: Paracontents
   csv: record+
   airtable: record+
   delimiter: [","]
