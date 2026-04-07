@@ -1,6 +1,6 @@
 airtable_base: 
 tables:
-  manuscript_objects:
+  ms_objs:
     csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/ms-objects-Export.csv
     airtable: 
     fields: fields/ms_objs.yml

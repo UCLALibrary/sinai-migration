@@ -20,7 +20,7 @@ The script accepts several command line arguments, which can be viewed by runnin
 
 The most important/common ones are:
 
-- record type, a required positional argument. Must be one of manuscript_objects, layers, text_units, or all. ('all' can be used to process all record types. Note that each type will be saved to a distinct subdirectory)
+- record type, a required positional argument. Must be one of ms_objs, layers, text_units, or all. ('all' can be used to process all record types. Note that each type will be saved to a distinct subdirectory)
 - mode (`-m`/`--mode`), required. Must be either 'csv' or 'airtable'. Sets whether data will be loaded from CSV files or downloaded from the Airtable API. See below, under Configuration, for more info
 - config directory (`-c`/`--config`), required. The absolute file path to the directory containing the configuration files (table config and field configs). See below, under Configuration, for more info on the contents of this directory.
 - output directory (`-o`/`--output`), optional. Specify the directory where JSON data records should be saved; if not included it will default to the current working directory. (Note that record types will be saved in sub-directories of the specified path named based on their record type, e.g. `/foo/bar/layers/`)
@@ -32,13 +32,13 @@ The most important/common ones are:
 
 The full list of options is as follows:
 ```
-usage: Sinai Portal Migration Script [-h] -m {airtable,csv} [-c CONFIG] [--interactive] [-o OUTPUT] [-t TABLECACHE] [--dryrun] {manuscript_objects,layers,text_units,all}
+usage: Sinai Portal Migration Script [-h] -m {airtable,csv} [-c CONFIG] [--interactive] [-o OUTPUT] [-t TABLECACHE] [--dryrun] {ms_objs,layers,text_units,all}
 
 A command line utility for migrating Sinai manuscripts metadata from Airtable or CSVs to Sinai Data Portal-compliant JSON records
 
 positional arguments:
-  {manuscript_objects,layers,text_units,all}
-                        The record type, must be one of ['manuscript_objects', 'layers', 'text_units'], or use 'all' to transform all types at once
+  {ms_objs,layers,text_units,all}
+                        The record type, must be one of ['ms_objs', 'layers', 'text_units'], or use 'all' to transform all types at once
 
 optional arguments:
   -h, --help            show this help message and exit

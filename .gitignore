@@ -37,7 +37,7 @@ share/python-wheels/
 
 # Repo-specific I/O
 # ignore any output JSON files
-manuscript_objects/
+ms_objs/
 ms_objs/
 layers/
 text_units/

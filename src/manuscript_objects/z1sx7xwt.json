@@ -1,0 +1,118 @@
+{
+  "ark": "ark:/21198/z1sx7xwt",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Syriac 245",
+  "extent": "193 ff.",
+  "weight": "710.5 g",
+  "dim": "171 x 132 x 78.0 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "paper",
+          "label": "Paper"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s1hp7w",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "para": [
+        {
+          "type": {
+            "id": "history",
+            "label": "History"
+          },
+          "locus": "192r-192v",
+          "lang": [
+            {
+              "id": "class1252",
+              "label": "Syriac"
+            }
+          ],
+          "as_written": "ܫܠܡ ܒܥܘܕܪܢ ܡܪܝܐ ܟܬܒܐ ܗ̇ܢܐ ܕܡܙܡܘܪ̈ܐ ܕܕܘܝܕ ܢܒܝܐ ܘܡܠܟܐ ܥܡ ܬܫ̈ܒܚ̄ ܕܢܒ̈ܝܐ܀ ܫܩܠ ܣܟܐ ܘܫܘܠܡܐ܀ ܝܘܡ܀ ܓ̄܀ ܒ̄ܫ܀ ܝ̄ܒ܀ ܡܢ ܚܙܝܪܢ ܝܪܚܐ܀ ܫܢܬ̤ ܐܠܦ܀ ܘܡ̈ܐܬܝܢ ܘܦ̄ܒ܀ ܗܝ̇ ܕܡܫܝܚܐ܀ ܒܕܝܪܐ ܩܕܝܫܐ ܕܡܪܬܢ ܝ̇ܠܕܬ ܐܠܗܐ ܕܡܬܝܕܥ ܒܕܝܪܐ ܕܟܦܬܘܢ܀ ܨܠܘܬܗ̇ ܬܗܘܐ ܫܘܪܐ ܠܟܠܢ ܐܡܝܢ܀ ܒܐܝܕܝ ܚ̇ܛܝܐ ܘܒܨܝܪܐ ܐܢܛܘܢܝ ܕܝܪܝܐ ܒܫܡܐ܀ ܒܪ ܕܢܝܐ ܡܢ ܩܪܝܬܐ ܕܐܪܒܠܝ ܡܢ ܟܪܟܐ ܕܛܘܝܦܘܠܝ[ ]: ܘܗܘ̇ ܫ̇ܐܠ ܘܒ̇ܥܐ ܡ̣ܢ ܟܠ ܡ̇ܢ ܕܢܚܘ̣ܪ ܒܟܬܒܐ ܘܩ̇ܪܐ ܒܗ ܘܡܨ̇ܠܐ ܡܢܗ܀ ܢܬܪܚܡ ܥܠ̄ܘ ܘܥ[  ] ܐܒܗܘ̈ܗܝ܀ ܘܢܒܥܐ ܡܢ ܐܠܗܐ ܠܗ ܘܠܗܘܢ ܘܠܟܠ ܒ[ ] ܡܥܡܘܕܝܬܐ ܫܘܒܩܢܐ ܒܝܘܡ ܕܝܢܐ܀ ܘܐܢ ܡܫ̇ܟܚ[  ] ܦܘܕܐ ܐܘ̇ ܓܠܛܐ ܢܬܪܘܨ ܒܡܗܝܪܘܬܗ܀ ܘܢܕܥ ܕܟ[ ] ܒܪܝܐ ܚ̇ܣܝܪ̣ ܀ ܘܐܠܗܐ ܒܠܚܘ̄ܕܘ ܐܝܬ̄ܘ ܫܘܡܠܝܐ [  ] ܐܠܗܐ ܐܒܐ ܕܪ̈ܚܡܐ.. ܢܬܠ ܫܘܒܩܢܐ ܘܚ[ ] ܠܟܬܘܒܐ ܘܠܩܪ̈ܘܝܐ ܘܠܡ̇ܢ ܕܢܐܡܪ ܐܡܝܢ܀ [ ] ܕܝܠܕܬ ܐܠܗܐ ܘܕܟܠܗܘܢ ܩ̈ܕܝܫܐ ܐܡܝܢ ܐܡ[  ]",
+          "assoc_name": [
+            {
+              "value": "Antony bar Daniel",
+              "as_written": "ܐܢܛܘܢܝ ܒܪ ܕܢܝܠ",
+              "role": {
+                "id": "scribe",
+                "label": "Scribe"
+              }
+            }
+          ],
+          "note": [
+            "Colophon page damaged",
+            "Attested places:  in Mart Maryam monastery, Keftun"
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "deb668b6-feec-4828-8749-a97441881226",
+      "shortcode": "Kamil 1970",
+      "citation": "Kāmil, Murād. Catalogue of All Manuscripts in the Monastery of St. Catherine on Mount Sinai. Harrassowitz, 1970",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "[29], p. 151"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Natural Light",
+      "manifest": "https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1sx7xwt/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged",
+      "thumbnail": "https://iiif.sinaimanuscripts.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fz1sx7xwt%2Fgj27ft3c/full/!200,200/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Library Digitization Project, Phase 1",
+        "description": "Digitized under the Sinai Library Digitization Project, Phase 1 (2018-2023), a collaboration of St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, with funding from the Arcadia Fund, the Ahmanson Foundation, and the Steinmetz Family Foundation. The project provided high-resolution images and basic description of the Arabic and Syriac manuscripts held in the Monastery’s library.",
+        "camera_operator": [
+          "Christos Georgiades"
+        ],
+        "imaging_date": "2019 November",
+        "delivery": "8",
+        "condition_category": "1",
+        "imaging_system": "BC100 - 2 cam., 740 ppi, 90mm lens"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

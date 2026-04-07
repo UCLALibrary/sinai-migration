@@ -1,0 +1,106 @@
+{
+  "ark": "ark:/21198/z1c83tzp",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Syriac 241",
+  "extent": "236 ff.",
+  "weight": "996.6 g",
+  "dim": "195 x 155 x 78.0 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "paper",
+          "label": "Paper"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s1s62n",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "para": [
+        {
+          "type": {
+            "id": "history",
+            "label": "History"
+          },
+          "locus": "236v-237r",
+          "lang": [
+            {
+              "id": "class1252",
+              "label": "Syriac"
+            }
+          ],
+          "as_written": "ܢܣܒ ܘܫܬܡܠܝ ܟܬܒܐ ܗܢܐ ܡܙܡܘܪܐ ܕܕܘܝܕ܀ ܕܗ̈ܘܝܢ ܒܡܢܝܐ ܩܢ܀ ܝܘܡ ܠܪ̈ܘܒܬܐ܀ ܕܓܣܪ̈ܝܢ ܘܒ̄ܐ܀ ܒܝܪܚܐ܀ ܐܒ̄܀ ܫܢܬ ܘ̄ܐܠܐܦ ܘܚ̄ ܡܐܐ܀ ܓܥ̈ܐ܀ ܠܐܒܘܢ ܐܕܡ܀ ܥܠ ܐܝܕܝ܀ ܐܢܫ ܚܛܝܐ ܟܗܢܐ܀ ܓܪܐܣ̄܀ ܡ̄܀ ܗ̄܀ ܒܪܝ ܕܡܬܪܝܐ܀ ܡܢ ܪܩܝܬܐ ܒܙܝܙܐ܀ ܡܢ ܐܬܪܐܕܐܛܪܐܦܠܘܣ܀ ܐܬܟܬܒ܀ ܬܕܝܪܐ ܕܩܪܝܬܢ ܝܠܕܬ ܐܠܗܐ܀ ܚܡܐ ܛܘܪܐ܀ ܐܠܗܐ ܡܢܝܚܐ ܢܦܫܗ ܒܡܠܟܘܬܗ ܕܫܡܝܐ܀ ܒܨܠܘܬܐ ܕܩܪܬܢ ܝܠܕܬ ܐܠܗܐ ܘܕܟܠܗܘܢ ܩܕܝܫ̈ܐ ܐܡܝܢ܀ ܘܐܡܝܢ܀",
+          "note": [
+            "Attested places:  in monastery of Theotokos in mountain of Hama"
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "deb668b6-feec-4828-8749-a97441881226",
+      "shortcode": "Kamil 1970",
+      "citation": "Kāmil, Murād. Catalogue of All Manuscripts in the Monastery of St. Catherine on Mount Sinai. Harrassowitz, 1970",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "[26], p. 151"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Natural Light",
+      "manifest": "https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1c83tzp/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged",
+      "thumbnail": "https://iiif.sinaimanuscripts.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fz1c83tzp%2Ftf32915x/full/!200,200/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Library Digitization Project, Phase 1",
+        "description": "Digitized under the Sinai Library Digitization Project, Phase 1 (2018-2023), a collaboration of St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, with funding from the Arcadia Fund, the Ahmanson Foundation, and the Steinmetz Family Foundation. The project provided high-resolution images and basic description of the Arabic and Syriac manuscripts held in the Monastery’s library.",
+        "camera_operator": [
+          "Lampros Galanis"
+        ],
+        "imaging_date": "2019 July",
+        "delivery": "5.2",
+        "imaging_system": "BC100 - 2 cam., 740 ppi, 90mm lens"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

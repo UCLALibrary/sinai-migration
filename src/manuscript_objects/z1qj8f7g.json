@@ -1,0 +1,120 @@
+{
+  "ark": "ark:/21198/z1qj8f7g",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Greek 962",
+  "extent": "202 ff.",
+  "dim": "150 x 100 x 80 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "coll": "Quire 1: 1x6+1 (7); Quires 2-4: 3x8 (31); Quire 5: 1x6 (37); Quire 6: 1x6+1 (44); Quires 7-8: 2x8 (60); Quire 9: 1+1x10 (71); Quire 10: 1x14 (85); Quires 11-21: 11x8 (173); Quire 22: 1x6+1+1 (181); Quire 23: 1x6 (187); Quire 24: 1x8 (195); Quire 25: 1+1x6 (202",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "140 x 100 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s15g83",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s12k9k",
+      "label": "Greek Undertext: Troparion",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 182, 187"
+    },
+    {
+      "id": "ark:/21198/s1b33z",
+      "label": "Greek Undertext: Kanon on Saint Nicholas",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 183,186"
+    },
+    {
+      "id": "ark:/21198/s1fw7b",
+      "label": "Greek Undertext: Joseph the Hymnographer, Kanon on Saints and Martyrs",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 184–185"
+    },
+    {
+      "id": "ark:/21198/s16d3t",
+      "label": "Greek Undertext: John Chrysostom, Ecloga 21",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 183,186"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "55eae5e7-ad84-46af-a814-4f5524b2d09d",
+      "shortcode": "Gardthausen 1886",
+      "citation": "Gardthausen, Victor E. Catalogus codicum Graecorum Sinaiticorum. Oxford, 1886",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "p. 206"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1qj8f7g/manifest",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1cc1x9p/0,902,5412,5412/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

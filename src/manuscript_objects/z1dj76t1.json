@@ -1,0 +1,141 @@
+{
+  "ark": "ark:/21198/z1dj76t1",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Arabic 481",
+  "extent": "338 ff.",
+  "weight": "2754.9 g",
+  "dim": "268 x 199 x 128.0 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "paper",
+          "label": "Paper"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s1w60t",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "para": [
+        {
+          "type": {
+            "id": "history",
+            "label": "History"
+          },
+          "locus": "f. 338r",
+          "lang": [
+            {
+              "id": "arab1395",
+              "label": "Arabic"
+            }
+          ],
+          "as_written": "تم الكتاب بعون الله تعالى من نقل أنبا أنطوني الأنطاكي رئيس دير طور سمعان العجائبي نيح الله نفسه واسكنه مع ابراره وقديسين امين / كتبه بطرس القس الحقير وهو يسأل كل من ترى في هذه الكتابة المبارك وطالع فيه ان يذكره بالمغفرة وكل احد تصبر اعماله ونيته يكافاه / وكان الفراغ في خامس عشر برمهات وهو شهر آذار في سنة ستة آلاف وخمسمائه وتسعة تسعين من سنين آدم أبو البشر عليه السلام  موافق تاريخ العرب سنة أربعمائه واثنين وتسعين 492 / ونعم الله الذي ينعم المذكورين آمين",
+          "assoc_name": [
+            {
+              "value": "Anbā Antony the Antiochene, head of the Monastery of Ṭūr Simʿān the Wonderworker",
+              "as_written": "أنبا أنطوني الأنطاكي رئيس دير طور سمعان العجائبي",
+              "role": {
+                "id": "source-exemplar",
+                "label": "Source of the exemplar"
+              }
+            },
+            {
+              "value": "Father Buṭrus (Peter) the priest",
+              "as_written": "بطرس القس",
+              "role": {
+                "id": "scribe",
+                "label": "Scribe"
+              }
+            }
+          ],
+          "assoc_date": [
+            {
+              "value": "1091 CE",
+              "iso": {
+                "not_before": "1091"
+              },
+              "type": {
+                "id": "origin",
+                "label": "Date of Origin"
+              },
+              "note": [
+                "March 6599 of Adam (Byzantine World Era) :: 492 (arab) = 1091 CE ",
+                "The first date is written in Hindu-Arabic numerals 9956 (LTR). The second date is the Arab date, written 429 (LTR)."
+              ]
+            }
+          ],
+          "note": [
+            "Written in a different hand"
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "deb668b6-feec-4828-8749-a97441881226",
+      "shortcode": "Kamil 1970",
+      "citation": "Kāmil, Murād. Catalogue of All Manuscripts in the Monastery of St. Catherine on Mount Sinai. Harrassowitz, 1970",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "[416], p. 33"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Natural Light",
+      "manifest": "https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1dj76t1/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged",
+      "thumbnail": "https://iiif.sinaimanuscripts.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fz1dj76t1%2F3942m48n/full/!200,200/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Library Digitization Project, Phase 1",
+        "description": "Digitized under the Sinai Library Digitization Project, Phase 1 (2018-2023), a collaboration of St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, with funding from the Arcadia Fund, the Ahmanson Foundation, and the Steinmetz Family Foundation. The project provided high-resolution images and basic description of the Arabic and Syriac manuscripts held in the Monastery’s library.",
+        "camera_operator": [
+          "Vasilis Kasotakis"
+        ],
+        "imaging_date": "2020 September",
+        "delivery": "7.1",
+        "condition_category": "2",
+        "imaging_system": "Stokes-PBC, 740 ppi, 90mm lens"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

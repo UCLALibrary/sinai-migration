@@ -1,0 +1,130 @@
+{
+  "ark": "ark:/21198/z1z3333b",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Arabic 170",
+  "extent": "208 ff.",
+  "weight": "2355.0 g",
+  "dim": "294 x 229 x 78 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "paper",
+          "label": "Paper"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s1vk56",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "para": [
+        {
+          "type": {
+            "id": "history",
+            "label": "History"
+          },
+          "locus": "f. 184v",
+          "lang": [
+            {
+              "id": "arab1395",
+              "label": "Arabic"
+            }
+          ],
+          "as_written": "وكان الفراغ من نسخ هذا الكتاب والمقدس يوم السبت  سابع شهر نيسان سنة ستة آلاف وسبعمائة وثلثه وتسعين سلف منذ الله لأبينا آدم / وهذا الكتاب كُتب بدير طور سيناء جبل الله المقدس حرسه الله وتولاه برسم المهتم به وهو الشيخ القديس المكرم أنبا اكليمي الاكليسيارشيس يومئذ في كنيسة الدير المقدس المذكور وكان ذلك في أيام الأب القديس مهدي النفوس المنتخب من الله لهداية شعبه الأنبا أرساني أسقف طور سيناء أدام الله رياسته ورحمنا بصلواته وهب الله له من الأعمار أطولها وذلك لما فيه من المنفعة ومسطرة الحقير في الملتجئين إلى الذي الرهباني لا ثوب التوبة والمسكين بأعماله السيئة وتعديه وصايا يا سيدة يراسمه  المدعو راهب يسأل كل من قرأ فيه أن يدعوا له بالغفران والصفح عن ربوات الآثام وإن وجد فيه غلط أو نقص فليصلحه لينال بذلك الثواب من رب الأنام يا رب اغفر للقارئ والسامع والكاتب آمين",
+          "translation": [
+            "Copying of this holy book finished on Saturday 7 in the month of Nīsān [March–April] in the year 6793 past since Allah created Our Father Adam [Year of the World Anno Mundi)], and this book was"
+          ],
+          "assoc_place": [
+            {
+              "id": "ark:/21198/s1qm59",
+              "event": {
+                "id": "origin",
+                "label": "Place of Origin"
+              }
+            }
+          ],
+          "assoc_date": [
+            {
+              "value": "1285 CE",
+              "iso": {
+                "not_before": "1285"
+              },
+              "type": {
+                "id": "origin",
+                "label": "Date of Origin"
+              },
+              "note": [
+                "Saturday 7 Nisan 6793 (Adam)"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "deb668b6-feec-4828-8749-a97441881226",
+      "shortcode": "Kamil 1970",
+      "citation": "Kāmil, Murād. Catalogue of All Manuscripts in the Monastery of St. Catherine on Mount Sinai. Harrassowitz, 1970",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "[235], p. 22"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Natural Light",
+      "manifest": "https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1z3333b/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged",
+      "thumbnail": "https://iiif.sinaimanuscripts.library.ucla.edu/iiif/2/ark%3A%2F21198%2Fz1z3333b%2F5k97ck5g/full/!200,200/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Library Digitization Project, Phase 1",
+        "description": "Digitized under the Sinai Library Digitization Project, Phase 1 (2018-2023), a collaboration of St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, with funding from the Arcadia Fund, the Ahmanson Foundation, and the Steinmetz Family Foundation. The project provided high-resolution images and basic description of the Arabic and Syriac manuscripts held in the Monastery’s library.",
+        "camera_operator": [
+          "Christos Georgiades"
+        ],
+        "imaging_date": "2019 January",
+        "delivery": "8",
+        "imaging_system": "BC100 - 2 cam., 600 ppi, 90mm lens"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

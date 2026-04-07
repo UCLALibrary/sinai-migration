@@ -1,6 +1,6 @@
 airtable_base: 
 tables:
-  manuscript_objects:
+  ms_objs:
     csv: 
     airtable: 
     fields: fields/ms_objs.yml

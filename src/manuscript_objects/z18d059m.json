@@ -1,0 +1,93 @@
+{
+  "ark": "ark:/21198/z18d059m",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Georgian NF M 59",
+  "extent": "12 ff.",
+  "dim": "105 x 92 x 17 mm",
+  "state": {
+    "id": "folio",
+    "label": "Folio(s)"
+  },
+  "coll": "Quire 1: 1x6 (6), 3x2 (12)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "105 x 92 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s13p6s",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s1j06x",
+      "label": "Georgian Undertext: Hymns",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 1–12"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-nf",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "New Finds"
+    }
+  ],
+  "bib": [
+    {
+      "id": "087ba7ab-401c-4edc-b474-7b86bc83cbce",
+      "shortcode": "Aleksidze, et al.",
+      "citation": "Aleksidze, Zaza, et al. Catalogue of Georgian manuscripts discovered in 1975 at St. Catherine's Monastery on Mount Sinai. Athens, 2005",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "p. 418"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz18d059m/manifest",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1p84d1s/1022,0,6132,6132/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

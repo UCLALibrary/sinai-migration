@@ -1,0 +1,129 @@
+{
+  "ark": "ark:/21198/z1dz1cqm",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Arabic 423",
+  "extent": "620 ff.",
+  "weight": "4501.6 g",
+  "dim": "315 x 237 x 113 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "paper",
+          "label": "Paper"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s15s4p",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "para": [
+        {
+          "type": {
+            "id": "history",
+            "label": "History"
+          },
+          "locus": "f. 619r",
+          "lang": [
+            {
+              "id": "arab1395",
+              "label": "Arabic"
+            }
+          ],
+          "as_written": "وكان النجاز من نساخة هذا الكتاب المبارك في الخامس وعشرين من شهر أيار سنة ستة سبعة آلاف مائه اربعة وثلاثين لكون العالم على يد أحقر العباد و أرذلهم سيماون باسم شماس فهو يسأل لكلمن قرأ فيه ووجد شيئا من النقص أو الغلط واصلحه اصلح الله تعالى دنياه واخرت لان الكمال الله وحده وكل انسان ناقص كما قيل النقص في نفس الطبيعة كائنا وبنو الطبيعة نقصهم لا ينكر ومن مجال بأن ترى احدا حوى وصف الكمال ووصفه متعدد / وقد كتبه لنفسه ليتعزا به في قلايته وانه فيما بعد اوهبه الولد العزيز نقولا … المعلم يوحنا ابن درغام في خامسة عشرين …نيسان سنة سبعة آلاف مائه وخمسين …",
+          "translation": [
+            "The completion of the copying of this blessed book occurred on the 25[th] in the month of Iyār [May] in the Year of the Existence of the World [Anno Mundi] 7134 by … Simon the Deacon …"
+          ],
+          "assoc_name": [
+            {
+              "value": "Simon the Deacon (f. 619r)",
+              "role": {
+                "id": "scribe",
+                "label": "Scribe"
+              }
+            }
+          ],
+          "assoc_date": [
+            {
+              "value": "1626 CE",
+              "iso": {
+                "not_before": "1626"
+              },
+              "type": {
+                "id": "origin",
+                "label": "Date of Origin"
+              },
+              "note": [
+                "25 Ayar 7134 (creation world)"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "deb668b6-feec-4828-8749-a97441881226",
+      "shortcode": "Kamil 1970",
+      "citation": "Kāmil, Murād. Catalogue of All Manuscripts in the Monastery of St. Catherine on Mount Sinai. Harrassowitz, 1970",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "[182], p. 20"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Natural Light",
+      "manifest": "https://iiif.library.ucla.edu/ark%3A%2F21198%2Fz1dz1cqm/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Library Digitization Project, Phase 1",
+        "description": "Digitized under the Sinai Library Digitization Project, Phase 1 (2018-2023), a collaboration of St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, with funding from the Arcadia Fund, the Ahmanson Foundation, and the Steinmetz Family Foundation. The project provided high-resolution images and basic description of the Arabic and Syriac manuscripts held in the Monastery’s library.",
+        "camera_operator": [
+          "Vasilis Kasotakis"
+        ],
+        "imaging_date": "2019 January",
+        "delivery": "8",
+        "imaging_system": "BC100 - 2 cam., 600 ppi, 90mm lens"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "ark": "ark:/21198/z1862z2p",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Greek NF MG 2",
+  "extent": "115 ff.",
+  "dim": "240 x 185 x 33 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "coll": "1x2+3x1+3x2+1 (12), Quire 1: 1x8 (20), Quire 2: 1x4+1+1 (26), Quire 3: 1x4 (30), Quire 4: 1x8 (38), Quire 5: 1x8+1+1 (48), Quire 6: 1x6 (54), Quire 7: 1x6 (60), Quire 8: 1x8 (68), Quire 9: 1x8 (76), Quire 10: 1x8 (84), Quire 11: 1x8 (92), Quire 12: 1x8 (100), Quire 13: 1x8 (108), 1+1+2x2+1 (115)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "240 x 185 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s18620",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s1vw6p",
+      "label": "Greek Undertext: Passages from Ecclesiasticus, Jeremiah, Baruch, Lamentations, the Epistle of Jeremiah, Ezekiel, and Daniel",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 1–31, 38–41, 44r–46, 48–49, 68–70, 72–73, 75–82, 83–86, 88–89, 91–93, 100–101, 108–109"
+    },
+    {
+      "id": "ark:/21198/s14d1f",
+      "label": "Greek Undertext: Antiochus of Palestine, Pandektēs",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 32–37, 42, 43, 47, 50–67, 71, 74, 96, 97, 102, 104–106, 110–114"
+    },
+    {
+      "id": "ark:/21198/s10p90",
+      "label": "Greek Undertext: Socrates Scholasticus, Historia ecclesiastica",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 87, 90, 94–95, 98–99, 103, 107"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-nf",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "New Finds"
+    }
+  ],
+  "bib": [
+    {
+      "id": "31086588-c563-4dca-b793-d9e4cbdc887b",
+      "shortcode": "Greek New Finds",
+      "citation": "Nikolopoulos, P. G. Τα νέα ευρήματα του Σινά (Athens, 1998). English translation: A. Hatzopoulos, The New Finds of Sinai (Athens, 1999)",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "p. 141"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1862z2p/manifest",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1d8007h/0,902,5412,5412/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

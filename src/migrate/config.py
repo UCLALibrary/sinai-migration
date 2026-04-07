@@ -9,7 +9,7 @@ import logging
 # CONSTANTS
 
 VALID_MODES = ["airtable", "csv"]
-VALIED_RECORD_TYPES = ["manuscript_objects", "layers", "text_units", "all"] # Note: "all" will transform all record types at once
+VALIED_RECORD_TYPES = ["ms_objs", "layers", "text_units", "all"] # Note: "all" will transform all record types at once
 
 DRYRUN = False
 
@@ -40,7 +40,7 @@ TEXT_UNIT_FIELD_ORDER = ["ark", "reconstruction", "label", "summary", "locus", "
 PERFORM_VALIDATION = False
 
 SCHEMA_URLS = {
-    "manuscript_objects": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/ms_obj.compiled.json',
+    "ms_objs": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/ms_obj.compiled.json',
     "layers": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/layer.compiled.json',
     "text_units": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/text_unit.compiled.json',
     "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json',

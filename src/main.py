@@ -21,7 +21,7 @@ def main(args):
 
     # Migrate all record types, or the one selected
     if(args.record_type == "all"):
-        migrate.transform.transform_records("manuscript_objects")
+        migrate.transform.transform_records("ms_objs")
         migrate.transform.transform_records("layers")
         migrate.transform.transform_records("text_units")
     else:

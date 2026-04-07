@@ -1,0 +1,110 @@
+{
+  "ark": "ark:/21198/z1pc3j0n",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Georgian 10",
+  "extent": "266 ff.",
+  "dim": "228 x 166 x 110 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "coll": "Only palimpsest quires are considered: Quire 1 begins f. 216r. Quires 1-5: 5x8 (216-255), Quire 6: 1x6 (261), Quire 7:  1x4+1 (266, f. 264 is a single-folio)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "226 x 158 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s1d326",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s1vp8c",
+      "label": "Georgian Undertext: Lectionary",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 216–218, 221–223, 240, 247"
+    },
+    {
+      "id": "ark:/21198/s1m623",
+      "label": "Georgian Undertext: Mravaltavi",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 219–220, 224–239, 241–246, 248–261, 263, 265"
+    },
+    {
+      "id": "ark:/21198/s1r041",
+      "label": "Georgian Undertext: Iadgari",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 262, 266"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "6e969e87-70b6-4d13-bcff-a087e4b2b924",
+      "shortcode": "Gvaramia, et al. 1987",
+      "citation": "Gvaramia, R., E. Met'reveli, C. Č'ank'ievi, L. Xevsuriani, and L. Džġamaia. Kartul xelnacerta aġc'eriloba: Sinuri k'olekcia [Description of Georgian manuscripts: Sinai collection III]. Tbilisi, 1987",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      }
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1pc3j0n/manifest",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1ms45s9/0,1022,6132,6132/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

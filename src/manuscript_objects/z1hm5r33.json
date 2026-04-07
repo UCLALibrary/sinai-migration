@@ -1,0 +1,122 @@
+{
+  "ark": "ark:/21198/z1hm5r33",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Greek 960",
+  "extent": "155 ff.",
+  "dim": "160 x 150 x 70 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "coll": "Quires 1-3: 3x8 (24); Quire 4: 1x6+1 (31); Quire 5-7 (incl. fol. 51a): 3x8 (54); Quire 8: 1x6 (60); Quire 9-10: 2x8 (76); Quire 11: 1x6+1( 83); Quire 12: 1x6 (89); Quire 13: 1x8+1 (98); Quire 14: 1x8 (106); Quire 15: 1x4 (110); Quire 16: 1x8 (118); Quire 17: 1x4+1+1 (124); Quire 18-19: 2x8 (140); Quire 20: 1x4+1+1 (146), singleton (147); Quire 21: 1x6+1 (154)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "150 x 142 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s1961x",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ],
+      "related_mss": [
+        {
+          "type": {
+            "id": "disjecta",
+            "label": "Disjecta Membra"
+          },
+          "label": "Originally belonged together with the following",
+          "mss": [
+            {
+              "label": "Sinai Greek NF M 11"
+            },
+            {
+              "label": "Sinai Greek NF M 22"
+            },
+            {
+              "label": "Sinai Greek NF M 79"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s1qd23",
+      "label": "Greek Undertext: Liturgy of Saint Basil",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 91–106, 141–147"
+    },
+    {
+      "id": "ark:/21198/s1kk97",
+      "label": "Greek Undertext: Sticherarion",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 9–50, 51, 51a, 52–90, 119–124, 148–154"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "55eae5e7-ad84-46af-a814-4f5524b2d09d",
+      "shortcode": "Gardthausen 1886",
+      "citation": "Gardthausen, Victor E. Catalogus codicum Graecorum Sinaiticorum. Oxford, 1886",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "p. 205   "
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1hm5r33/manifest",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz11g159h/0,1022,6132,6132/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

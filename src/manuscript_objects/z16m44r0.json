@@ -1,0 +1,157 @@
+{
+  "ark": "ark:/21198/z16m44r0",
+  "reconstruction": false,
+  "type": {
+    "id": "manuscript",
+    "label": "Manuscript"
+  },
+  "shelfmark": "Sinai Arabic 588",
+  "extent": "69 ff.",
+  "dim": "230 x 200 x 85 mm",
+  "state": {
+    "id": "codex",
+    "label": "Codex"
+  },
+  "coll": "3x1 (3); Quire 1, four single-folios with stubs: 4x1 (7) plus five singletons: 5x1 (12); Quire 2: 1x4 (16) plus 1 singleton (17); Quire 3, bifolio encompassing 8 single-folios: 8x1 inserted in 1x2 (27); Quire 4, bifolio encompassing 10 single-folios: 10x1 inserted in 1x2 (39) plus four singletons: 4x1 (43); Quire 5, 3 single-folios with stubs: 3x1 (46); 3 singletons: 3x1 (49); Quire 6, 1 bifolio encompassing, from outside in, 2 single-folios with stubs, 2 bifolios, 2 single-folios with stubs: 1x2, 2x1, 2x2, 2x1 (59); Quire 7: 2x2, 2x1, 1x2 (67); 1x2 (69)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "dim": "230 x 175 mm (representative folio)",
+      "layer": [
+        {
+          "id": "ark:/21198/s15609",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "layer": [
+    {
+      "id": "ark:/21198/s1792q",
+      "label": "Arabic Undertext: Unidentified text",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "throughout ff. 1–55, stub-58"
+    },
+    {
+      "id": "ark:/21198/s1q922",
+      "label": "Syriac Undertext: Gospel of James (Apocrypha)",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 50, 53, 56, 58–59, 63–65"
+    },
+    {
+      "id": "ark:/21198/s1v05b",
+      "label": "Syriac Undertext: Life of St. Simeon Stylites",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 52, 62, 66r–67"
+    },
+    {
+      "id": "ark:/21198/s1c04m",
+      "label": "Syriac Undertext: Unidentified hagiography",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 57, 60–61, 67r, 68–69"
+    },
+    {
+      "id": "ark:/21198/s1kh04",
+      "label": "Arabic Undertext: Unidentified text",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 33, 35, 45–46"
+    },
+    {
+      "id": "ark:/21198/s13g9v",
+      "label": "Syriac Undertext: Infancy Gospels of Thomas",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "ff. 33, 35, 45–46"
+    },
+    {
+      "id": "ark:/21198/s1zs8b",
+      "label": "Syriac Undertext: Departure of Mary",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "f. 39"
+    },
+    {
+      "id": "ark:/21198/s1gs7m",
+      "label": "CPA Undertext: Bible. Samuel, Bible. Kings",
+      "type": {
+        "id": "undertext",
+        "label": "Undertext"
+      },
+      "locus": "f. 68v"
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-oc",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "Old Collection"
+    }
+  ],
+  "bib": [
+    {
+      "id": "306681bc-375b-4914-bfbc-17551c68cb30",
+      "shortcode": "Atiya",
+      "citation": "Atiya, Aziz Suryal. The Arabic Manuscripts of Mount Sinai: A Hand-List of the Arabic Manuscripts and Scrolls Microfilmed at the Library of the Monastery of St. Catherine, Mount Sinai. 1955",
+      "type": {
+        "id": "ref",
+        "label": "Reference"
+      },
+      "range": "p. 24 "
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "Multispectral Images",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz16m44r0/manifest",
+      "text_direction": "right-to-left",
+      "behavior": "paged",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1qj8gpq/0,1022,6132,6132/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "sppms"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  }
+}

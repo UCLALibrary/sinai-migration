@@ -81,7 +81,7 @@ def transform_single_record(record, record_type, fields):
 
     # if an ms obj, use the 
     para_level = None
-    if record_type == "manuscript_objects":
+    if record_type == "ms_objs":
         para_level = "ms"
     result["para"] = transform_paracontents_data(paracontents_data, level_filter=para_level)
 
@@ -107,7 +107,7 @@ def transform_single_record(record, record_type, fields):
     if(change_log["change_log_message"] and len(change_log["change_log_message"]) < 0):
         result["cataloguer"] = transform_change_log_data(change_log)
 
-    if(record_type == "manuscript_objects"):
+    if(record_type == "ms_objs"):
         transform_manuscript_object_fields(record, result, fields, paracontents_data=paracontents_data)
         result = {k: result.get(k) for k in config.MS_OBJ_FIELD_ORDER}
     if(record_type == "layers"):

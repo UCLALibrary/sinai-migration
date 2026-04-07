@@ -1,0 +1,71 @@
+{
+  "ark": "ark:/21198/z1xj0h4s",
+  "reconstruction": true,
+  "type": {
+    "id": "uto",
+    "label": "Undertext Object"
+  },
+  "shelfmark": "UTO Sinai Georgian NF M 13, SPP No. 376",
+  "weight": "Original field name: Format.weight",
+  "dim": "Original field name: Format.dimensions",
+  "state": {
+    "id": "uto",
+    "label": "Undertext Object"
+  },
+  "fol": "Reconstructed folio order, ff. (NF 55: 45v, 45r, 48r, 48v, 50r, 50v, 46v, 46r), 79v, 79r, (NF 55: 57v, 57r, 59v, 59r, 51v, 51r), 87v, 87r, 80v, 80r, 88r, 88v, 95r, 95v, (NF 55: 61r, 61v, 56v, 56r, 53v, 53r),  90r, 90v, (NF 55: 47v, 47r), 85v, 85r, 82v, 82r, (NF 55: 44v, 44r), 93r, 93v, (NF 55: 43r, 43v, 49r, 49v), 86v (with frag081r = frag086v), 86r (with frag081v = frag086r), 84v, 84r, 83v, 83r, 81v, 81r, 92r, 92v, 91r, 91v, (NF 55: 52r, 52v), 94v, 94r, 89v, 89r, (NF 55: 58r, 58v)",
+  "part": [
+    {
+      "label": "Part 1",
+      "support": [
+        {
+          "id": "parchment",
+          "label": "Parchment"
+        }
+      ],
+      "layer": [
+        {
+          "id": "ark:/21198/s1dd1x",
+          "label": "Overtext Layer",
+          "type": {
+            "id": "overtext",
+            "label": "Overtext"
+          }
+        }
+      ]
+    }
+  ],
+  "location": [
+    {
+      "id": "sinai-nf",
+      "repository": "St. Catherine's Monastery of the Sinai",
+      "collection": "New Finds"
+    }
+  ],
+  "iiif": [
+    {
+      "type": {
+        "id": "main",
+        "label": "Main"
+      },
+      "label": "SPP",
+      "manifest": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1ww8090/manifest",
+      "thumbnail": "https://sinai-images.library.ucla.edu/iiif/ark:%2F21198%2Fz1fb5jpv/0,1022,6132,6132/150,150/0/default.jpg"
+    }
+  ],
+  "desc_provenance": {
+    "rights": "Unless otherwise indicated, all metadata is copyright the authors and is released under the Creative Commons Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/."
+  },
+  "image_provenance": {
+    "program": [
+      {
+        "label": "Sinai Palimpsests Project",
+        "description": "Imaged and studied as part of the Sinai Palimpsests Project (2011–2016), a collaboration between St. Catherine’s Monastery of the Sinai, the Early Manuscripts Electronic Library, and UCLA Library, funded by the Arcadia Fund and the Ahmanson Foundation. The project used multispectral imaging and scholarly analysis to recover and document erased and obscured texts in palimpsest manuscripts from the monastery’s collection.",
+        "delivery": "spputos"
+      }
+    ],
+    "rights": "All manuscript images are the property of St. Catherine’s Monastery of the Sinai. No part of these images may be reproduced, reused, or distributed without prior written permission. For permissions and reuse requests, please contact sinai@library.ucla.edu."
+  },
+  "reconstructed_from": [
+    "ark:/21198/z1ww8090"
+  ]
+}
