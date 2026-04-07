@@ -1,0 +1,46 @@
+{
+  "ark": "ark:/21198/s1d99x",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Anastasius, Sinaita, Saint, active 640-700",
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "floruit": {
+    "value": "640-700",
+    "iso": {
+      "not_before": "0640",
+      "not_after": "0700"
+    }
+  },
+  "rel_con": [
+    {
+      "label": "Anastasius, Sinaita, Saint, active 640-700",
+      "uri": "https://viaf.org/viaf/314808225",
+      "source": "VIAF"
+    },
+    {
+      "label": "Anastasius, Sinaita, Saint, active 640-700",
+      "uri": "https://id.loc.gov/authorities/names/n83164822",
+      "source": "LOC"
+    },
+    {
+      "label": "Anastasius, Sinaita, active 640-700",
+      "uri": "https://w3id.org/haf/person/709094077383",
+      "source": "HAF"
+    },
+    {
+      "label": "Anastasios of Sinai",
+      "uri": "http://syriaca.org/person/2789",
+      "source": "Syriaca"
+    },
+    {
+      "label": "    Anastasius Sinaita ",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/172/",
+      "source": "Pinakes"
+    }
+  ]
+}

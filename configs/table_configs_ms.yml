@@ -76,3 +76,11 @@ tables:
 #  - genres: 
 #  - contributors: 
 #  - programs: 
+
+# Entity records
+
+  agents:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/agents-export.csv
+    airtable:
+    fields: fields/agents.yml
+

@@ -76,3 +76,11 @@ tables:
 #  - genres: 
 #  - contributors: 
 #  - programs: 
+
+#Entity records
+
+  agents:
+    csv:
+    airtable:
+    fields: fields/agents.yml
+

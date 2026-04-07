@@ -1,0 +1,128 @@
+ark:
+  name: ARK
+  csv: text
+  airtable: text
+type:
+  name: Type
+  csv: text
+  airtable: text
+pref_name:
+  name: Name
+  csv: text
+  airtable: text
+aka:
+  name: AKA
+  csv: text+
+  airtable: text+
+  delimiter: [";"]
+ns_name:
+  name: NS Name
+  csv: text+
+  airtable: text+
+  delimiter: [";"]
+desc:
+  name: Description
+  csv: text
+  airtable: text
+gender:
+  name: Gender
+  csv: text
+  airtable: text
+dates_value:
+  name: Dates
+  csv: text
+  airtable: text
+dates_iso:
+  name: Dates.normalized
+  csv: text
+  airtable: text
+dates_type:
+  name: Dates.type
+  csv: text
+  airtable: text
+viaf_uri:
+  name: VIAF
+  csv: text
+  airtable: text
+viaf_label:
+  name: Name.VIAF
+  csv: text
+  airtable: text
+loc_uri:
+  name: LOC
+  csv: text
+  airtable: text
+loc_label:
+  name: Name.LOC
+  csv: text
+  airtable: text
+haf_uri:
+  name: HAF
+  csv: text
+  airtable: text
+haf_label:
+  name: Name.HAF
+  csv: text
+  airtable: text
+syriaca_uri:
+  name: Syriaca
+  csv: text
+  airtable: text
+syriaca_label:
+  name: Name.Syriaca
+  csv: text
+  airtable: text
+pinakes_uri:
+  name: Pinakes
+  csv: text
+  airtable: text
+pinakes_label:
+  name: Name.Pinakes
+  csv: text
+  airtable: text
+refno_label:
+  name: Refno Label
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+refno_idno:
+  name: Refno ID
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+refno_source:
+  name: Refno Source
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+bibs:
+  name: Reference Instances
+  csv: record+
+  airtable: record+
+  delimiter: [","]
+  lookup: bibs.*
+note:
+  name: Notes
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_message:
+  name: Change Log Message
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_contributor:
+  name: Change Log Contributor
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|", ","]
+change_log_added_by:
+  name: Change Log Added by
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_timestamp:
+  name: Change Log Timestamp
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]

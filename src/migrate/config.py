@@ -9,7 +9,7 @@ import logging
 # CONSTANTS
 
 VALID_MODES = ["airtable", "csv"]
-VALIED_RECORD_TYPES = ["ms_objs", "layers", "text_units", "all"] # Note: "all" will transform all record types at once
+VALIED_RECORD_TYPES = ["ms_objs", "layers", "text_units", "agents", "works", "places", "all", "all_ms", "all_entities"] # Note: "all" will transform all record types at once
 
 DRYRUN = False
 
@@ -35,6 +35,8 @@ LAYER_FIELD_ORDER = ["ark", "reconstruction", "state", "label", "locus", "summar
 
 TEXT_UNIT_FIELD_ORDER = ["ark", "reconstruction", "label", "summary", "locus", "lang", "work_wit", "para", "assoc_date", "assoc_name", "assoc_place", "features", "note", "bib", "desc_provenance", "cataloguer", "reconstructed_from", "parent", "internal"]
 
+AGENT_FIELD_ORDER = ["ark", "type", "pref_name", "alt_name", "desc", "gender", "birth", "death", "floruit", "rel_con", "refno", "bib", "note", "rel_agent", "rel_place", "cataloguer"]
+
 # Validation related constants and configurations
 
 PERFORM_VALIDATION = False
@@ -45,7 +47,8 @@ SCHEMA_URLS = {
     "text_units": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/text_unit.compiled.json',
     "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json',
     "works": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/work.compiled.json',
-    "smdl": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/smdl.json'
+    "smdl": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/smdl.json',
+    "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json'
 }
 
 SCHEMA_CATALOG = None

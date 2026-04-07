@@ -1,0 +1,46 @@
+{
+  "ark": "ark:/21198/s1j100",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Jerome, Saint, -419 or 420",
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "death": {
+    "value": "d. 419 or 420",
+    "iso": {
+      "not_before": "0419",
+      "not_after": "0420"
+    }
+  },
+  "rel_con": [
+    {
+      "label": "Jerome, Saint, -419 or 420",
+      "uri": "https://viaf.org/viaf/95147024",
+      "source": "VIAF"
+    },
+    {
+      "label": "Jerome, Saint, -419 or 420",
+      "uri": "https://id.loc.gov/authorities/names/n79124709",
+      "source": "LOC"
+    },
+    {
+      "label": "Jerome, -419 or 420",
+      "uri": "https://w3id.org/haf/person/646415272788",
+      "source": "HAF"
+    },
+    {
+      "label": "Jerome",
+      "uri": "http://syriaca.org/person/857",
+      "source": "Syriaca"
+    },
+    {
+      "label": "Hieronymus Stridonensis",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/1338/",
+      "source": "Pinakes"
+    }
+  ]
+}
