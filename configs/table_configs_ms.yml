@@ -1,0 +1,78 @@
+airtable_base: 
+tables:
+  manuscript_objects:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/ms-objects-Export.csv
+    airtable: 
+    fields: fields/ms_objs.yml
+  parts:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/parts-export.csv
+    airtable: 
+    fields: fields/parts.yml
+    index_col: ID
+  layers: 
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/layers-export.csv
+    airtable: 
+    fields: fields/layers.yml
+  text_units:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/text-units-export.csv
+    airtable: 
+    fields: fields/text_units.yml
+  work_witnesses:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/wits-export.csv
+    airtable: 
+    fields: fields/work_witnesses.yml
+    index_col: ID
+  tocs:
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/ToC-Text Unit Migration.csv'
+    airtable: 
+    fields: fields/tocs.yml
+    index_col: ID
+  excerpts:
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Excerpts-Migration Export.csv'
+    airtable: 
+    fields: fields/excerpts.yml
+    index_col: ID
+  bibs:
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Portal Reference instances.csv'
+    airtable: 
+    fields: fields/bibs.yml
+    index_col: ID
+  paracontents:
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Portal Paracontent.csv'
+    airtable: 
+    fields: fields/paracontents.yml
+    index_col: ID
+  assoc_entities:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/AssociatedEntities.csv
+    airtable: 
+    fields: fields/assoc_entities.yml
+    index_col: ID
+  related_mss:
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Related Mss.csv'
+    airtable: 
+    fields: fields/related_mss.yml
+    index_col: ID
+  writing:
+    csv: 
+    airtable:
+    fields: fields/writing.yml
+    index_col: ID
+  # states:
+  #   csv: 
+  #   airtable: 
+  #   fields: fields/states.yml
+  # features:
+  #   csv: 
+  #   airtable: 
+  #   fields: fields/features.yml
+#  - supports:
+#  - locations:
+#  - scripts:
+#  - writing_systems:
+#  - languages:
+#  - names: 
+#  - places: 
+#  - works: 
+#  - genres: 
+#  - contributors: 
+#  - programs: 

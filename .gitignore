@@ -38,9 +38,12 @@ share/python-wheels/
 # Repo-specific I/O
 # ignore any output JSON files
 manuscript_objects/
+ms_objs/
 layers/
 text_units/
 table_cache/
+validation-errors/
+configs/csvs/
 
 # Others
 .DS_Store
