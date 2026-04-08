@@ -1060,7 +1060,7 @@ def transform_change_log_data(change_log_data):
         logs.append({
             "message": get_element(change_log_data["change_log_message"], i),
             "contributor": get_element(change_log_data["change_log_contributor"], i),
-            "added_by": get_element(change_log_data["change_log_added_by"], i),
+            "added_by": get_element(change_log_data["change_log_added_by"], i) or "sinai-admin",
             "timestamp": get_element(change_log_data["change_log_timestamp"], i)
         })
     return logs
