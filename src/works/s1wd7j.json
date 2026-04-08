@@ -1,0 +1,36 @@
+{
+  "ark": "ark:/21198/s1wd7j",
+  "pref_title": "Memra on Divine Epiphany (Chrysostom)",
+  "alt_title": [
+    "Mēmrā on Divine Epiphany"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1x303",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De baptismo Christi",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/2133/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De baptismo Christi",
+      "idno": "4335",
+      "source": "CPG"
+    }
+  ]
+}

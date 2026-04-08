@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s1qx3n",
+  "pref_title": "Epigrams (Gregory of Nazianzus)",
+  "genre": [
+    {
+      "id": "poetry",
+      "label": "Poetry"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s12s3c",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Epigrammata",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/5414/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Epigrammata 1-94 (= Epig. 1-94)",
+      "idno": "3039",
+      "source": "CPG"
+    }
+  ]
+}

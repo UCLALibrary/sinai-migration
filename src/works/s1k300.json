@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s1k300",
+  "pref_title": "Paraklesis",
+  "genre": [
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    },
+    {
+      "id": "prayers",
+      "label": "Prayers"
+    }
+  ]
+}

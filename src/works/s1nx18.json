@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s1nx18",
+  "pref_title": "Life of Mary of Egypt (Sophronius)",
+  "genre": [
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1nc71",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Vita Mariae Aegyptiacae",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/13405/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Vita Mariae Aegyptiacae (a Metaphrasta in menologium inserta)",
+      "idno": "7675",
+      "source": "CPG"
+    }
+  ]
+}

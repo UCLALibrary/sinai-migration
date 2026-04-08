@@ -1,0 +1,26 @@
+{
+  "ark": "ark:/21198/s1rt2j",
+  "pref_title": "Autobiography of Dionysius the Areopagite",
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1c88w",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "refno": [
+    {
+      "label": "Narratio de uita sua",
+      "idno": "6633",
+      "source": "CPG"
+    }
+  ]
+}

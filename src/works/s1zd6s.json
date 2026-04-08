@@ -1,0 +1,19 @@
+{
+  "ark": "ark:/21198/s1zd6s",
+  "pref_title": "Homily for Easter (Paschal Homily)",
+  "genre": [
+    {
+      "id": "sermons",
+      "label": "Sermons"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1x303",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s1088g",
+  "pref_title": "Lectionary",
+  "genre": [
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    },
+    {
+      "id": "lectionaries",
+      "label": "Lectionaries"
+    }
+  ]
+}

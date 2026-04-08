@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s1ch6j",
+  "pref_title": "On Divine Names (Dionysius)",
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1c88w",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De diuinis nominibus",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/2496/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De diuinis nominibus",
+      "idno": "6602",
+      "source": "CPG"
+    }
+  ]
+}

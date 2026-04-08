@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s1vc88",
+  "pref_title": "Troparion",
+  "genre": [
+    {
+      "id": "hymnals",
+      "label": "Hymnals"
+    },
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    }
+  ]
+}

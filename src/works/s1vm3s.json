@@ -1,0 +1,22 @@
+{
+  "ark": "ark:/21198/s1vm3s",
+  "pref_title": "Encomium on John the Baptist (Pseudo-Chrysostom)",
+  "alt_title": [
+    "Mimar by St. John Chrysostom on St. John Baptist"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1c987",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ]
+}

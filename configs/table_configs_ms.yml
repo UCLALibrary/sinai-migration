@@ -89,4 +89,10 @@ tables:
     airtable:
     fields: fields/places.yml
 
+  works:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/works-export.csv
+    airtable:
+    fields: fields/works.yml
+
+
 

@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s17s3x",
+  "pref_title": "Kontakarion",
+  "genre": [
+    {
+      "id": "hymnals",
+      "label": "Hymnals"
+    },
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "ark": "ark:/21198/s1wm4g",
+  "pref_title": "Ascetica (Basil of Caesarea)",
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1101c",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "refno": [
+    {
+      "label": "Asceticon magnum siue Quaestiones",
+      "idno": "2875",
+      "source": "CPG"
+    }
+  ]
+}

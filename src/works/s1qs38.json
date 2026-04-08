@@ -1,0 +1,32 @@
+{
+  "ark": "ark:/21198/s1qs38",
+  "pref_title": "Life of Saint Pishoy",
+  "alt_title": [
+    "Life of Saint Bishoy"
+  ],
+  "genre": [
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Iohannes Colobus Vita S. Paisii",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/13457/",
+      "source": "Pinakes"
+    },
+    {
+      "label": "Life of Pshoi",
+      "uri": "https://w3id.org/haf/work/372399730628",
+      "source": "HAF"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Vita Psoi (Bisoes) (Paisii seu Paesii) anachoretae",
+      "idno": "2503",
+      "source": "CPG"
+    }
+  ]
+}

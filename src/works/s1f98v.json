@@ -1,0 +1,36 @@
+{
+  "ark": "ark:/21198/s1f98v",
+  "pref_title": "The Great Letter (Pseudo-Maracius)",
+  "alt_title": [
+    "Epistula magna"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s14t3b",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Epistulae, Epistula magna",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/recension/1098/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Epistula magna",
+      "idno": "2415.2",
+      "source": "CPG"
+    }
+  ]
+}

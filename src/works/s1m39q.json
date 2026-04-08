@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s1m39q",
+  "pref_title": "Epistle 114 (Gregory of Nazianzus)",
+  "alt_title": [
+    "Epistle to Celeusius"
+  ],
+  "genre": [
+    {
+      "id": "correspondence",
+      "label": "Epistolary texts"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s12s3c",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Epistulae",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/6064/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Epistulae",
+      "idno": "3032.114",
+      "source": "CPG"
+    }
+  ]
+}

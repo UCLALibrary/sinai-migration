@@ -143,6 +143,11 @@ def transform_entity_record(record, record_type, fields):
         transform_place_fields(record, result, fields)
         result = {k: result.get(k) for k in config.PLACE_FIELD_ORDER}
 
+    elif record_type == "works":
+        transform_work_fields(record, result, fields)
+        result = {k: result.get(k) for k in config.WORK_FIELD_ORDER}
+
+
     return del_none(result)
 
 def transform_agent_fields(record, result, fields):
@@ -255,6 +260,105 @@ def transform_place_fields(record, result, fields):
         ]
 
     # bib: lookup to bibs table
+    bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
+    if bibs and len(bibs) > 0:
+        result["bib"] = [transform_bib_data(bibs)]
+
+    result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
+
+    return result
+
+def transform_work_fields(record, result, fields):
+    result["pref_title"] = parse.get_data_from_field(source=record, field_config=fields['pref_title'])
+
+    # orig_lang: {id, label} from two columns
+    orig_lang_label = parse.get_data_from_field(source=record, field_config=fields['orig_lang'])
+    orig_lang_id = parse.get_data_from_field(source=record, field_config=fields['orig_lang_id'])
+    if orig_lang_label and orig_lang_id:
+        result["orig_lang"] = {"id": orig_lang_id, "label": orig_lang_label}
+
+    result["orig_lang_title"] = parse.get_data_from_field(source=record, field_config=fields['orig_lang_title'])
+
+    # alt_title: merge alt_title and NS Title arrays
+    alt_title = parse.get_data_from_field(source=record, field_config=fields['alt_title']) or []
+    ns_title = parse.get_data_from_field(source=record, field_config=fields['ns_title'])
+    ns_title_list = [ns_title] if ns_title else []
+    all_alt_titles = alt_title + ns_title_list
+    if all_alt_titles:
+        result["alt_title"] = all_alt_titles
+
+    result["desc"] = parse.get_data_from_field(source=record, field_config=fields['desc'])
+
+    # genre: parallel arrays -> [{id, label}]
+    genre_labels = parse.get_data_from_field(source=record, field_config=fields['genre_label']) or []
+    genre_ids = parse.get_data_from_field(source=record, field_config=fields['genre_id']) or []
+    if genre_labels:
+        result["genre"] = [
+            {"id": get_element(genre_ids, i), "label": get_element(genre_labels, i)}
+            for i in range(len(genre_labels))
+        ]
+
+    # creator: author ARKs -> [{id, role: {id, label}}]
+    author_arks = parse.get_data_from_field(source=record, field_config=fields['author_ark']) or []
+    if author_arks:
+        result["creator"] = [
+            {"id": ark, "role": {"id": "author", "label": "Author"}}
+            for ark in author_arks
+        ]
+
+    # creation: {value, iso}
+    creation_value = parse.get_data_from_field(source=record, field_config=fields['date_creation'])
+    creation_iso = parse.get_data_from_field(source=record, field_config=fields['date_iso'])
+    if creation_value or creation_iso:
+        creation_obj = {}
+        if creation_value:
+            creation_obj["value"] = creation_value
+        if creation_iso:
+            creation_obj["iso"] = process_iso_string(creation_iso)
+        result["creation"] = creation_obj
+
+    # incipit and explicit: just the value for now
+    incipit_val = parse.get_data_from_field(source=record, field_config=fields['incipit'])
+    if incipit_val:
+        result["incipit"] = {"value": incipit_val}
+
+    explicit_val = parse.get_data_from_field(source=record, field_config=fields['explicit'])
+    if explicit_val:
+        result["explicit"] = {"value": explicit_val}
+
+    # rel_con: authority file entries (same hardcoded pattern as agents)
+    authorities = [
+        ("loc_uri", "loc_label", "LOC"),
+        ("viaf_uri", "viaf_label", "VIAF"),
+        ("pinakes_uri", "pinakes_label", "Pinakes"),
+        ("perseus_uri", "perseus_label", "Perseus"),
+        ("haf_uri", "haf_label", "HAF"),
+        ("syriaca_uri", "syriaca_label", "Syriaca"),
+    ]
+    rel_con = []
+    for uri_key, label_key, source in authorities:
+        uri = parse.get_data_from_field(source=record, field_config=fields[uri_key])
+        label = parse.get_data_from_field(source=record, field_config=fields[label_key])
+        if uri or label:
+            rel_con.append({"label": label, "uri": uri, "source": source})
+    if rel_con:
+        result["rel_con"] = rel_con
+
+    # refno: one entry per reference work (CPG, CPL, TLG)
+    refno = []
+    for idno_key, label_key, source in [
+        ("cpg_idno", "cpg_label", "CPG"),
+        ("cpl_idno", "cpl_label", "CPL"),
+        ("tlg_idno", "tlg_label", "TLG"),
+    ]:
+        idno = parse.get_data_from_field(source=record, field_config=fields[idno_key])
+        label = parse.get_data_from_field(source=record, field_config=fields[label_key])
+        if idno or label:
+            refno.append({"label": label, "idno": idno, "source": source})
+    if refno:
+        result["refno"] = refno
+
+    # bib
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     if bibs and len(bibs) > 0:
         result["bib"] = [transform_bib_data(bibs)]

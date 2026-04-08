@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s1j694",
+  "pref_title": "Life of Paul of Thebes (St. Jerome)",
+  "genre": [
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1j100",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Vita Pauli eremitae Thebaidis",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/13413/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Vita Pauli eremitae",
+      "idno": "3636",
+      "source": "CPG"
+    }
+  ]
+}

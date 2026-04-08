@@ -1,0 +1,22 @@
+{
+  "ark": "ark:/21198/s1x986",
+  "pref_title": "Universal History (Agapius)",
+  "alt_title": [
+    "Kitāb al‑ʿUnwān"
+  ],
+  "genre": [
+    {
+      "id": "historical-works",
+      "label": "Historical works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1rh7b",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ]
+}

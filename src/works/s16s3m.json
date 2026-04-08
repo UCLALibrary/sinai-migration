@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s16s3m",
+  "pref_title": "Menologion",
+  "genre": [
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    },
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    }
+  ]
+}

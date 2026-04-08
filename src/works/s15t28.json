@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s15t28",
+  "pref_title": "To the Monks of India (Karpathos)",
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s14k5p",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Capita hortatoria ad monachos in India",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/1021/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Capita hortatoria ad monachos in India",
+      "idno": "7855",
+      "source": "CPG"
+    }
+  ]
+}

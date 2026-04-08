@@ -1,0 +1,37 @@
+{
+  "ark": "ark:/21198/s14108",
+  "pref_title": "On Sufferings, Compunction, and Consolation for the Departed",
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1nt30",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Sermo de morte et de iudicio",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/12488/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Sermo de morte et de iudicio",
+      "idno": "2618",
+      "source": "CPG"
+    }
+  ]
+}

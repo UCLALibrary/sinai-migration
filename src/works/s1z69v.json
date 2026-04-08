@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s1z69v",
+  "pref_title": "Recognitions (Pseudo-Clement)",
+  "alt_title": [
+    "Clementine Recognitions"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "apocrypha",
+      "label": "Apocrypha"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1w998",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Pseudo-Clementina 5: Recognitiones",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/11998",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Recognitiones",
+      "idno": "1015.5",
+      "source": "CPG"
+    }
+  ]
+}

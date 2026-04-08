@@ -1,0 +1,17 @@
+{
+  "ark": "ark:/21198/s11984",
+  "pref_title": "Apophthegmata patrum (Syriac version, old recension)",
+  "genre": [
+    {
+      "id": "apophthegmata",
+      "label": "Apophthegmata"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Apophthegmata. Versiones Syriacae: Recensio uetustior",
+      "idno": "5578",
+      "source": "CPG"
+    }
+  ]
+}

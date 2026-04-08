@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s13400",
+  "pref_title": "History of the philosopher Dandamis (Palladius of Aspuna)",
+  "genre": [
+    {
+      "id": "historical-works",
+      "label": "Historical works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s12p4q",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De gentibus Indiae et de bragmanibus",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/2753/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De gentibus Indiae et Bragmanibus",
+      "idno": "6038",
+      "source": "CPG"
+    }
+  ]
+}

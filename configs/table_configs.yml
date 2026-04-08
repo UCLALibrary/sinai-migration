@@ -89,4 +89,10 @@ tables:
     airtable:
     fields: fields/places.yml
 
+  works:
+    csv:
+    airtable:
+    fields: fields/works.yml
+
+
 

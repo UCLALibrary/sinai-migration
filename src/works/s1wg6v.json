@@ -1,0 +1,42 @@
+{
+  "ark": "ark:/21198/s1wg6v",
+  "pref_title": "Homilies on First Corinthians (Chrysostom)",
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "sermons",
+      "label": "Sermons"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1x303",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "John Chrysostom, Saint, -407. | Homilies on First Corinthians",
+      "uri": "http://viaf.org/viaf/186435585",
+      "source": "VIAF"
+    },
+    {
+      "label": "In Epistulam I ad Corinthios argumentum et homiliae 1-44",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/7816/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "In epistulam I ad Corinthios argumentum et homiliae 1-44",
+      "idno": "4428",
+      "source": "CPG"
+    }
+  ]
+}

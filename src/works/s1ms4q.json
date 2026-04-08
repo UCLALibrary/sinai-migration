@@ -1,0 +1,14 @@
+{
+  "ark": "ark:/21198/s1ms4q",
+  "pref_title": "Sticherarion",
+  "genre": [
+    {
+      "id": "hymnals",
+      "label": "Hymnals"
+    },
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    }
+  ]
+}

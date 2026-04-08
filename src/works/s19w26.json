@@ -1,0 +1,22 @@
+{
+  "ark": "ark:/21198/s19w26",
+  "pref_title": "Bible. Malachi",
+  "genre": [
+    {
+      "id": "biblical-texts",
+      "label": "Biblical texts"
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Bible. Malachi",
+      "uri": "http://id.loc.gov/authorities/names/n81112442",
+      "source": "LOC"
+    },
+    {
+      "label": "Martyrdom and literature",
+      "uri": "https://viaf.org/viaf/192637637",
+      "source": "VIAF"
+    }
+  ]
+}

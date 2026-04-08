@@ -1,0 +1,17 @@
+{
+  "ark": "ark:/21198/s19h6x",
+  "pref_title": "The Life of Xenophon, Mary, John, and Arcadius",
+  "genre": [
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "John, Arcadius, Xenophon, and Mary",
+      "uri": "http://syriaca.org/work/1491",
+      "source": "Syriaca"
+    }
+  ]
+}

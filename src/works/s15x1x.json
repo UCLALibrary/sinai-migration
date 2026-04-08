@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s15x1x",
+  "pref_title": "Homily on the Common Resurrection (Ephrem)",
+  "alt_title": [
+    "Homily on the Common Resurrection, on Penance and Charity, and on the Second Advent of Jesus Christ"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "sermons",
+      "label": "Sermons"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1v887",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De communi resurrectione",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/2258/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Sermo de communi resurrectione, de paenitentia et de caritate, et in secundum aduentum domini nostri Iesu Christi",
+      "idno": "3945",
+      "source": "CPG"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s1qq4z",
+  "pref_title": "On Virginity (Gregory of Nyssa)",
+  "alt_title": [
+    "De virginitate"
+  ],
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1z30d",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De uirginitate",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/4212/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De uirginitate",
+      "idno": "3165",
+      "source": "CPG"
+    }
+  ]
+}

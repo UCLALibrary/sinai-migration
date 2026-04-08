@@ -1,0 +1,33 @@
+{
+  "ark": "ark:/21198/s14019",
+  "pref_title": "Lausiac History (Palladius)",
+  "alt_title": [
+    "Historia Lausiaca"
+  ],
+  "genre": [
+    {
+      "id": "hagiographies",
+      "label": "Hagiographies"
+    },
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s12p4q",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Palladius Bishop of Aspuna d. ca. 430. Historia Lausiaca",
+      "uri": "https://catalog.perseus.org/catalog/urn:cts:greekLit:tlg2111.tlg001",
+      "source": "Perseus"
+    }
+  ]
+}

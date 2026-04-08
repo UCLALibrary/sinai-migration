@@ -1,0 +1,17 @@
+{
+  "ark": "ark:/21198/s1t01h",
+  "pref_title": "Bible. Amos",
+  "genre": [
+    {
+      "id": "biblical-texts",
+      "label": "Biblical texts"
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Bible. Amos",
+      "uri": "http://viaf.org/viaf/316751468",
+      "source": "VIAF"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "ark": "ark:/21198/s1px1k",
+  "pref_title": "Homily on Judgment and Compunction (Ephrem)",
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "sermons",
+      "label": "Sermons"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1v887",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De iudicio et compunctione",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/3002/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De iudicio et compunctione",
+      "idno": "3940",
+      "source": "CPG"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "ark": "ark:/21198/s1gp4f",
+  "pref_title": "Pandektēs (Antiochus of Palestine)",
+  "orig_lang": {
+    "id": "gree1276",
+    "label": "Greek"
+  },
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1kw2p",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Antiochus monachus Pandecte de la Sainte Écriture",
+      "uri": "http://viaf.org/viaf/292613749",
+      "source": "VIAF"
+    }
+  ]
+}
