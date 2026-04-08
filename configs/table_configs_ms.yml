@@ -1,7 +1,7 @@
 airtable_base: 
 tables:
   ms_objs:
-    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/ms-objects-Export.csv
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/ms-objects-export.csv
     airtable: 
     fields: fields/ms_objs.yml
   parts:
@@ -23,32 +23,32 @@ tables:
     fields: fields/work_witnesses.yml
     index_col: ID
   tocs:
-    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/ToC-Text Unit Migration.csv'
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/toc-export.csv'
     airtable: 
     fields: fields/tocs.yml
     index_col: ID
   excerpts:
-    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Excerpts-Migration Export.csv'
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/excerpts-export.csv'
     airtable: 
     fields: fields/excerpts.yml
     index_col: ID
   bibs:
-    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Portal Reference instances.csv'
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/ref-obj-export.csv'
     airtable: 
     fields: fields/bibs.yml
     index_col: ID
   paracontents:
-    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Portal Paracontent.csv'
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/para-export.csv'
     airtable: 
     fields: fields/paracontents.yml
     index_col: ID
   assoc_entities:
-    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/AssociatedEntities.csv
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/assoc-entities-export.csv
     airtable: 
     fields: fields/assoc_entities.yml
     index_col: ID
   related_mss:
-    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/Related Mss.csv'
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/rel-mss-export.csv'
     airtable: 
     fields: fields/related_mss.yml
     index_col: ID
