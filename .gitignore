@@ -40,9 +40,11 @@ share/python-wheels/
 ms_objs/
 layers/
 text_units/
+agents/
+works/
+places/
 table_cache/
 validation-errors/
-configs/csvs/
 
 # Others
 .DS_Store
