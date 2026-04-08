@@ -83,4 +83,10 @@ tables:
     csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/agents-export.csv
     airtable:
     fields: fields/agents.yml
+    
+  places:
+    csv: /Users/kirschbombe/Sites/sinai-migration/configs/csvs/places-export.csv
+    airtable:
+    fields: fields/places.yml
+
 

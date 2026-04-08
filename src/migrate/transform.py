@@ -139,6 +139,10 @@ def transform_entity_record(record, record_type, fields):
         transform_agent_fields(record, result, fields)
         result = {k: result.get(k) for k in config.AGENT_FIELD_ORDER}
 
+    elif record_type == "places":
+        transform_place_fields(record, result, fields)
+        result = {k: result.get(k) for k in config.PLACE_FIELD_ORDER}
+
     return del_none(result)
 
 def transform_agent_fields(record, result, fields):
@@ -205,6 +209,52 @@ def transform_agent_fields(record, result, fields):
         ]
 
     # bib: lookup to bibs table (same pattern as existing records)
+    bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
+    if bibs and len(bibs) > 0:
+        result["bib"] = [transform_bib_data(bibs)]
+
+    result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
+
+    return result
+
+def transform_place_fields(record, result, fields):
+    # type: {id, label} from two separate CSV columns
+    type_id = parse.get_data_from_field(source=record, field_config=fields['type_id'])
+    type_label = parse.get_data_from_field(source=record, field_config=fields['type_label'])
+    if type_id and type_label:
+        result["type"] = {"id": type_id, "label": type_label}
+
+    result["pref_name"] = parse.get_data_from_field(source=record, field_config=fields['pref_name'])
+
+    result["alt_name"] = parse.get_data_from_field(source=record, field_config=fields['alt_name'])
+
+    result["desc"] = parse.get_data_from_field(source=record, field_config=fields['desc'])
+
+    # rel_con: flexible parallel arrays for any authority
+    rel_con_labels = parse.get_data_from_field(source=record, field_config=fields['rel_con_label']) or []
+    rel_con_uris = parse.get_data_from_field(source=record, field_config=fields['rel_con_uri']) or []
+    rel_con_sources = parse.get_data_from_field(source=record, field_config=fields['rel_con_source']) or []
+    if rel_con_labels:
+        result["rel_con"] = [
+            {"label": get_element(rel_con_labels, i),
+             "uri": get_element(rel_con_uris, i),
+             "source": get_element(rel_con_sources, i)}
+            for i in range(len(rel_con_labels))
+        ]
+
+    # refno: parallel arrays -> array of {label, idno, source} objects
+    refno_labels = parse.get_data_from_field(source=record, field_config=fields['refno_label']) or []
+    refno_idnos = parse.get_data_from_field(source=record, field_config=fields['refno_idno']) or []
+    refno_sources = parse.get_data_from_field(source=record, field_config=fields['refno_source']) or []
+    if refno_labels:
+        result["refno"] = [
+            {"label": get_element(refno_labels, i),
+             "idno": get_element(refno_idnos, i),
+             "source": get_element(refno_sources, i)}
+            for i in range(len(refno_labels))
+        ]
+
+    # bib: lookup to bibs table
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     if bibs and len(bibs) > 0:
         result["bib"] = [transform_bib_data(bibs)]

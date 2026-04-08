@@ -37,6 +37,8 @@ TEXT_UNIT_FIELD_ORDER = ["ark", "reconstruction", "label", "summary", "locus", "
 
 AGENT_FIELD_ORDER = ["ark", "type", "pref_name", "alt_name", "desc", "gender", "birth", "death", "floruit", "rel_con", "refno", "bib", "note", "rel_agent", "rel_place", "cataloguer"]
 
+PLACE_FIELD_ORDER = ["ark", "type", "pref_name", "alt_name", "desc", "geojson", "rel_con", "refno", "bib", "note", "rel_place", "cataloguer"]
+
 # Validation related constants and configurations
 
 PERFORM_VALIDATION = False
@@ -48,7 +50,9 @@ SCHEMA_URLS = {
     "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json',
     "works": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/work.compiled.json',
     "smdl": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/smdl.json',
-    "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json'
+    "agents": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json',
+    "places": 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/place.compiled.json'
+
 }
 
 SCHEMA_CATALOG = None

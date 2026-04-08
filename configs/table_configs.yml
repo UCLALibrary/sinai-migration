@@ -84,3 +84,9 @@ tables:
     airtable:
     fields: fields/agents.yml
 
+  places:
+    csv:
+    airtable:
+    fields: fields/places.yml
+
+

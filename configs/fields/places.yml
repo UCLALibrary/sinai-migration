@@ -1,0 +1,86 @@
+ark:
+  name: ARK
+  csv: text
+  airtable: text
+type_id:
+  name: Type ID
+  csv: text
+  airtable: text
+type_label:
+  name: Type Label
+  csv: text
+  airtable: text
+pref_name:
+  name: Preferred Name
+  csv: text
+  airtable: text
+alt_name:
+  name: Alt Names
+  csv: text+
+  airtable: text+
+  delimiter: [";"]
+desc:
+  name: Description
+  csv: text
+  airtable: text
+rel_con_label:
+  name: Rel Con Label
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+rel_con_uri:
+  name: Rel Con URI
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+rel_con_source:
+  name: Rel Con Source
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+refno_label:
+  name: Refno Label
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+refno_idno:
+  name: Refno ID
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+refno_source:
+  name: Refno Source
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+bibs:
+  name: Reference Instances
+  csv: record+
+  airtable: record+
+  delimiter: [","]
+  lookup: bibs.*
+note:
+  name: Notes
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_message:
+  name: Change Log Message
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_contributor:
+  name: Change Log Contributor
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|", ","]
+change_log_added_by:
+  name: Change Log Added by
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_timestamp:
+  name: Change Log Timestamp
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
