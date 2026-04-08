@@ -1,0 +1,30 @@
+{
+  "ark": "ark:/21198/s1pq51",
+  "pref_title": "Small Asceticon (Basil)",
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1101c",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "refno": [
+    {
+      "label": "Aseticon paruum",
+      "idno": "2876",
+      "source": "CPG"
+    }
+  ]
+}

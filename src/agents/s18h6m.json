@@ -1,0 +1,46 @@
+{
+  "ark": "ark:/21198/s18h6m",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Leontius, Bishop of Neapolis, active 7th century",
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "floruit": {
+    "value": "7th c.",
+    "iso": {
+      "not_before": "0601",
+      "not_after": "0700"
+    }
+  },
+  "rel_con": [
+    {
+      "label": "Leontius, Bishop of Neapolis, active 7th century",
+      "uri": "https://viaf.org/viaf/120699895",
+      "source": "VIAF"
+    },
+    {
+      "label": "Leontius, Bishop of Neapolis, active 7th century",
+      "uri": "https://id.loc.gov/authorities/names/nr93007519",
+      "source": "LOC"
+    },
+    {
+      "label": "Leontius, Bishop of Neapolis, active 7th century",
+      "uri": "https://w3id.org/haf/person/975296914403",
+      "source": "HAF"
+    },
+    {
+      "label": "Leontius of Neapolis ",
+      "uri": "http://syriaca.org/person/2797",
+      "source": "Syriaca"
+    },
+    {
+      "label": "Leontius Neapolitanus ep.",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/1650/",
+      "source": "Pinakes"
+    }
+  ]
+}

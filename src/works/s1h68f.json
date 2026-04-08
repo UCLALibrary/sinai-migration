@@ -1,0 +1,26 @@
+{
+  "ark": "ark:/21198/s1h68f",
+  "pref_title": "Narrations (Anastasius)",
+  "genre": [
+    {
+      "id": "historical-works",
+      "label": "Historical works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1d99x",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "refno": [
+    {
+      "label": "Narrationes",
+      "idno": "7758",
+      "source": "CPG"
+    }
+  ]
+}

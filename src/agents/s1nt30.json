@@ -1,0 +1,41 @@
+{
+  "ark": "ark:/21198/s1nt30",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Theophilus, Archbishop of Alexandria, -412",
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "floruit": {
+    "value": "345-412",
+    "iso": {
+      "not_before": "0345",
+      "not_after": "0412"
+    }
+  },
+  "rel_con": [
+    {
+      "label": "Theophilus,, Archbishop of Alexandria, -412",
+      "uri": "https://viaf.org/viaf/15565199",
+      "source": "VIAF"
+    },
+    {
+      "label": "Theophilus, Archbishop of Alexandria, -412",
+      "uri": "https://id.loc.gov/authorities/names/no96005068",
+      "source": "LOC"
+    },
+    {
+      "label": "Theophilus, Archbishop of Alexandria, approximately 345-412",
+      "uri": "https://w3id.org/haf/person/658885585413",
+      "source": "HAF"
+    },
+    {
+      "label": "    Theophilus Alexandrinus ptr. ",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/2741/",
+      "source": "Pinakes"
+    }
+  ]
+}

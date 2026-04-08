@@ -1,0 +1,24 @@
+{
+  "ark": "ark:/21198/s16x2m",
+  "pref_title": "History of the Monks of Egypt",
+  "genre": [
+    {
+      "id": "historical-works",
+      "label": "Historical works"
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Historia monachorum in Aegypto",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/6842/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Historia monachorum in Aegypto",
+      "idno": "5620",
+      "source": "CPG"
+    }
+  ]
+}

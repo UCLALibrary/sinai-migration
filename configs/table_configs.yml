@@ -1,6 +1,6 @@
 airtable_base: 
 tables:
-  manuscript_objects:
+  ms_objs:
     csv: 
     airtable: 
     fields: fields/ms_objs.yml
@@ -76,3 +76,23 @@ tables:
 #  - genres: 
 #  - contributors: 
 #  - programs: 
+
+#Entity records
+
+  agents:
+    csv:
+    airtable:
+    fields: fields/agents.yml
+
+  places:
+    csv:
+    airtable:
+    fields: fields/places.yml
+
+  works:
+    csv:
+    airtable:
+    fields: fields/works.yml
+
+
+

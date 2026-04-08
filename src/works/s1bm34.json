@@ -1,0 +1,41 @@
+{
+  "ark": "ark:/21198/s1bm34",
+  "pref_title": "Great Canon (Andrew of Crete)",
+  "alt_title": [
+    "Canon of Repentance ",
+    "Canon of Obeisance"
+  ],
+  "genre": [
+    {
+      "id": "hymnals",
+      "label": "Hymnals"
+    },
+    {
+      "id": "liturgical-texts",
+      "label": "Liturgical texts"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1vc7w",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Canon Magnus",
+      "uri": "https://pinakes.irht.cnrs.fr//notices/oeuvre/906",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": " Canones, Triodia ac Troparia",
+      "idno": "8219",
+      "source": "CPG"
+    }
+  ]
+}

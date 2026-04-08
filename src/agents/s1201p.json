@@ -1,0 +1,25 @@
+{
+  "ark": "ark:/21198/s1201p",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Chariton of the Monastery of the Theotokos Aršāyā",
+  "alt_name": [
+    "Chariton of the Monastery of the Theotokos Aršāyā"
+  ],
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "rel_con": [
+    {
+      "label": "Chariton ab. in Palaestina",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/saint/170/",
+      "source": "Pinakes"
+    }
+  ],
+  "note": [
+    "translator ; from Patristic Literature in Arabic Translations. v. 2 https://brill.com/view/book/edcoll/9789004415041/back-1.xml"
+  ]
+}

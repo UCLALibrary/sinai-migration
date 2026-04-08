@@ -1,0 +1,48 @@
+{
+  "ark": "ark:/21198/s1sh68",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Timotheus I, Archbishop of Alexandria, -385",
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  },
+  "death": {
+    "value": "d. ca 384",
+    "iso": {
+      "not_before": "0384"
+    }
+  },
+  "rel_con": [
+    {
+      "label": "Timotheus I, Archbishop of Alexandria, -385",
+      "uri": "http://viaf.org/viaf/231936023",
+      "source": "VIAF"
+    },
+    {
+      "label": "Timotheus I, Archbishop of Alexandria, -385",
+      "uri": "https://id.loc.gov/authorities/names/nb2007020093",
+      "source": "LOC"
+    },
+    {
+      "label": "Timothy I, Patriarch of Alexandria, -385",
+      "uri": "https://w3id.org/haf/person/208648816898",
+      "source": "HAF"
+    },
+    {
+      "label": "Timothy I",
+      "uri": "http://syriaca.org/person/2774",
+      "source": "Syriaca"
+    },
+    {
+      "label": "Timotheus Alexandrinus ptr. I",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/2771/",
+      "source": "Pinakes"
+    }
+  ],
+  "note": [
+    "author"
+  ]
+}

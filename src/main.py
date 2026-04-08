@@ -20,10 +20,21 @@ def main(args):
         migrate.wrangle.cache_wrangled_tables()
 
     # Migrate all record types, or the one selected
-    if(args.record_type == "all"):
-        migrate.transform.transform_records("manuscript_objects")
+    if args.record_type == "all":
+        migrate.transform.transform_records("ms_objs")
         migrate.transform.transform_records("layers")
         migrate.transform.transform_records("text_units")
+        migrate.transform.transform_records("agents")
+        migrate.transform.transform_records("works")
+        migrate.transform.transform_records("places")
+    elif args.record_type == "all_ms":
+        migrate.transform.transform_records("ms_objs")
+        migrate.transform.transform_records("layers")
+        migrate.transform.transform_records("text_units")
+    elif args.record_type == "all_entities":
+        migrate.transform.transform_records("agents")
+        migrate.transform.transform_records("works")
+        migrate.transform.transform_records("places")
     else:
         migrate.transform.transform_records(args.record_type)
 

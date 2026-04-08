@@ -1,0 +1,37 @@
+{
+  "ark": "ark:/21198/s1n10x",
+  "pref_title": "Mystical Theology (Dionysius)",
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    },
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1c88w",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "De mystica theologia",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/3253/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "De mystica theologia",
+      "idno": "6603",
+      "source": "CPG"
+    }
+  ]
+}

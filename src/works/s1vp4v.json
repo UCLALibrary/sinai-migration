@@ -1,0 +1,35 @@
+{
+  "ark": "ark:/21198/s1vp4v",
+  "pref_title": "Dialogi quatuor (Caesarius, of Nazianzus)‏",
+  "alt_title": [
+    "Four Dialogues ",
+    "Quaestiones et responsiones‏"
+  ],
+  "genre": [
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1j011",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Caesarii Dialogi quatuor",
+      "uri": "http://id.loc.gov/authorities/names/n91012876",
+      "source": "LOC"
+    },
+    {
+      "label": "Caesarii Dialogi quatuor",
+      "uri": "http://viaf.org/viaf/181110100",
+      "source": "VIAF"
+    }
+  ]
+}

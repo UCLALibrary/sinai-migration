@@ -1,0 +1,23 @@
+{
+  "ark": "ark:/21198/s1fd5r",
+  "pref_title": "Homily on the Ascension of the Lord",
+  "genre": [
+    {
+      "id": "sermons",
+      "label": "Sermons"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s17m4k",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ]
+}

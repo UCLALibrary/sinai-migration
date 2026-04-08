@@ -1,0 +1,38 @@
+{
+  "ark": "ark:/21198/s1w998",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Pseudo-Clement",
+  "alt_name": [
+    "Clement of Rome"
+  ],
+  "rel_con": [
+    {
+      "label": "Pseudo-Clement",
+      "uri": "http://viaf.org/viaf/465149294316080521760",
+      "source": "VIAF"
+    },
+    {
+      "label": "Pseudo-Clement",
+      "uri": "http://id.loc.gov/authorities/names/n2022016050",
+      "source": "LOC"
+    },
+    {
+      "label": "Pseudo-Clement",
+      "uri": "https://w3id.org/haf/person/411750944932",
+      "source": "HAF"
+    },
+    {
+      "label": "Clement",
+      "uri": "http://syriaca.org/person/2627",
+      "source": "Syriaca"
+    },
+    {
+      "label": "Clemens Romanus",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/auteur/730",
+      "source": "Pinakes"
+    }
+  ]
+}

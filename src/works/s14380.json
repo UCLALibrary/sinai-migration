@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s14380",
+  "pref_title": "Disputation with a Certain Lawyer",
+  "alt_title": [
+    "Disputatio cum causidico"
+  ],
+  "genre": [
+    {
+      "id": "polemic",
+      "label": "Polemical works"
+    },
+    {
+      "id": "theological-works",
+      "label": "Theological works"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1zw23",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Disputatio cum causidico (opusc. 7)",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/4574/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Opusc. VII. Disputatio cum quodam causidico",
+      "idno": "6097",
+      "source": "CPG"
+    }
+  ]
+}

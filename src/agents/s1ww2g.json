@@ -1,0 +1,16 @@
+{
+  "ark": "ark:/21198/s1ww2g",
+  "type": {
+    "id": "person",
+    "label": "Person"
+  },
+  "pref_name": "Sirach, Jesus Ben ",
+  "alt_name": [
+    "Yeshua Ben Sirach ",
+    "Ben Sira"
+  ],
+  "gender": {
+    "id": "man",
+    "label": "Man"
+  }
+}

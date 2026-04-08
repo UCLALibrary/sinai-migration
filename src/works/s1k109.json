@@ -1,0 +1,40 @@
+{
+  "ark": "ark:/21198/s1k109",
+  "pref_title": "The Causes for Monastic Observances (Evagrius)",
+  "alt_title": [
+    "Rerum monachalium rationes"
+  ],
+  "genre": [
+    {
+      "id": "ascetica",
+      "label": "Ascetica"
+    },
+    {
+      "id": "monastic",
+      "label": "Monastic rules"
+    }
+  ],
+  "creator": [
+    {
+      "id": "ark:/21198/s1b88k",
+      "role": {
+        "id": "author",
+        "label": "Author"
+      }
+    }
+  ],
+  "rel_con": [
+    {
+      "label": "Rerum monachalium rationes",
+      "uri": "https://pinakes.irht.cnrs.fr/notices/oeuvre/12057/",
+      "source": "Pinakes"
+    }
+  ],
+  "refno": [
+    {
+      "label": "Rerum monachalium rationes",
+      "idno": "2441",
+      "source": "CPG"
+    }
+  ]
+}

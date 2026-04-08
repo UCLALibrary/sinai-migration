@@ -1,0 +1,167 @@
+ark:
+  name: ARK
+  csv: text
+  airtable: text
+pref_title:
+  name: pref_title
+  csv: text
+  airtable: text
+orig_lang:
+  name: orig_lang
+  csv: text
+  airtable: text
+orig_lang_id:
+  name: orig_lang.id
+  csv: text
+  airtable: text
+orig_lang_title:
+  name: orig_lang_title
+  csv: text
+  airtable: text
+ns_title:
+  name: NS Title
+  csv: text
+  airtable: text
+alt_title:
+  name: alt_title
+  csv: text+
+  airtable: text+
+  delimiter: [";"]
+genre_label:
+  name: Genres
+  csv: text+
+  airtable: text+
+  delimiter: [","]
+genre_id:
+  name: Genre id
+  csv: text+
+  airtable: text+
+  delimiter: [", "]
+desc:
+  name: desc
+  csv: text
+  airtable: text
+incipit:
+  name: incipit
+  csv: text
+  airtable: text
+explicit:
+  name: explicit
+  csv: text
+  airtable: text
+loc_uri:
+  name: LOC
+  csv: text
+  airtable: text
+loc_label:
+  name: Title.LOC
+  csv: text
+  airtable: text
+viaf_uri:
+  name: VIAF
+  csv: text
+  airtable: text
+viaf_label:
+  name: Title.VIAF
+  csv: text
+  airtable: text
+pinakes_uri:
+  name: Pinakes
+  csv: text
+  airtable: text
+pinakes_label:
+  name: Title.Pinakes
+  csv: text
+  airtable: text
+cpg_idno:
+  name: CPG
+  csv: text
+  airtable: text
+cpg_label:
+  name: Title.CPG
+  csv: text
+  airtable: text
+cpl_idno:
+  name: CPL
+  csv: text
+  airtable: text
+cpl_label:
+  name: Title.CPL
+  csv: text
+  airtable: text
+tlg_idno:
+  name: TLG
+  csv: text
+  airtable: text
+tlg_label:
+  name: Title.TLG
+  csv: text
+  airtable: text
+perseus_uri:
+  name: Perseus
+  csv: text
+  airtable: text
+perseus_label:
+  name: Title.Perseus
+  csv: text
+  airtable: text
+haf_uri:
+  name: HAF
+  csv: text
+  airtable: text
+haf_label:
+  name: Title.HAF
+  csv: text
+  airtable: text
+syriaca_uri:
+  name: Syriaca
+  csv: text
+  airtable: text
+syriaca_label:
+  name: Title.Syriaca
+  csv: text
+  airtable: text
+author_ark:
+  name: Author ARK
+  csv: text+
+  airtable: text+
+  delimiter: [", "]
+bibs:
+  name: Reference Instances
+  csv: record+
+  airtable: record+
+  delimiter: [","]
+  lookup: bibs.*
+note:
+  name: Notes
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+date_creation:
+  name: Date.creation
+  csv: text
+  airtable: text
+date_iso:
+  name: Date.normalized
+  csv: text
+  airtable: text
+change_log_message:
+  name: Change Log Message
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_contributor:
+  name: Change Log Contributor
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|", ","]
+change_log_added_by:
+  name: Change Log Added by
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]
+change_log_timestamp:
+  name: Change Log Timestamp
+  csv: text+
+  airtable: text+
+  delimiter: ["|~|"]

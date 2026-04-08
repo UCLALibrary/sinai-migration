@@ -18,9 +18,14 @@ def transform_records(table_name: str):
         ark = parse.get_data_from_field(source=main_table['data'].get(record), field_config=config.TABLES[table_name]['fields']['ark'])
         logging.info(f'Processing record {ark}...')
         try:
-            transformed_record = transform_single_record(record=main_table["data"].get(record), 
-                                                     record_type=table_name,
-                                                     fields=config.TABLES[table_name]["fields"])
+            if table_name in ["agents", "works", "places"]:
+                transformed_record = transform_entity_record(record=main_table["data"].get(record),
+                                                         record_type=table_name,
+                                                         fields=config.TABLES[table_name]["fields"])
+            else:
+                transformed_record = transform_single_record(record=main_table["data"].get(record),
+                                                         record_type=table_name,
+                                                         fields=config.TABLES[table_name]["fields"])
             logging.info(f'- Record {ark} transformed')
             # Validate record, and add to list of errors if invalid
             if config.PERFORM_VALIDATION:
@@ -81,7 +86,7 @@ def transform_single_record(record, record_type, fields):
 
     # if an ms obj, use the 
     para_level = None
-    if record_type == "manuscript_objects":
+    if record_type == "ms_objs":
         para_level = "ms"
     result["para"] = transform_paracontents_data(paracontents_data, level_filter=para_level)
 
@@ -104,10 +109,10 @@ def transform_single_record(record, record_type, fields):
 
     # change log
     change_log = parse.get_data_from_multiple_fields(source=record,fields=fields, field_list=["change_log_message", "change_log_contributor", "change_log_added_by", "change_log_timestamp"])
-    if(change_log["change_log_message"] and len(change_log["change_log_message"]) < 0):
+    if(change_log["change_log_message"] and len(change_log["change_log_message"]) > 0):
         result["cataloguer"] = transform_change_log_data(change_log)
 
-    if(record_type == "manuscript_objects"):
+    if(record_type == "ms_objs"):
         transform_manuscript_object_fields(record, result, fields, paracontents_data=paracontents_data)
         result = {k: result.get(k) for k in config.MS_OBJ_FIELD_ORDER}
     if(record_type == "layers"):
@@ -118,6 +123,250 @@ def transform_single_record(record, record_type, fields):
         result = {k: result.get(k) for k in config.TEXT_UNIT_FIELD_ORDER}
 
     return del_none(result)
+
+
+def transform_entity_record(record, record_type, fields):
+    result = {}
+    result['ark'] = parse.get_data_from_field(source=record, field_config=fields['ark'])
+
+    # change log / cataloguer
+    change_log = parse.get_data_from_multiple_fields(source=record, fields=fields,
+        field_list=["change_log_message", "change_log_contributor", "change_log_added_by", "change_log_timestamp"])
+    if change_log["change_log_message"] and len(change_log["change_log_message"]) > 0:
+        result["cataloguer"] = transform_change_log_data(change_log)
+
+    if record_type == "agents":
+        transform_agent_fields(record, result, fields)
+        result = {k: result.get(k) for k in config.AGENT_FIELD_ORDER}
+
+    elif record_type == "places":
+        transform_place_fields(record, result, fields)
+        result = {k: result.get(k) for k in config.PLACE_FIELD_ORDER}
+
+    elif record_type == "works":
+        transform_work_fields(record, result, fields)
+        result = {k: result.get(k) for k in config.WORK_FIELD_ORDER}
+
+
+    return del_none(result)
+
+def transform_agent_fields(record, result, fields):
+    # type: {id, label} from single CSV column ("person" -> {id: "person", label: "Person"})
+    type_val = parse.get_data_from_field(source=record, field_config=fields['type'])
+    if type_val:
+        result["type"] = {"id": type_val, "label": type_val.capitalize()}
+
+    result["pref_name"] = parse.get_data_from_field(source=record, field_config=fields['pref_name'])
+
+    # alt_name: merge AKA and NS Name arrays
+    aka = parse.get_data_from_field(source=record, field_config=fields['aka']) or []
+    ns_name = parse.get_data_from_field(source=record, field_config=fields['ns_name']) or []
+    alt_names = aka + ns_name
+    if alt_names:
+        result["alt_name"] = alt_names
+
+    result["desc"] = parse.get_data_from_field(source=record, field_config=fields['desc'])
+
+    # gender: {id, label} -- CSV has "Man" -> {id: "man", label: "Man"}
+    gender_val = parse.get_data_from_field(source=record, field_config=fields['gender'])
+    if gender_val:
+        result["gender"] = {"id": gender_val.lower(), "label": gender_val}
+
+    # birth/death/floruit -- routed by dates_type column value
+    dates_value = parse.get_data_from_field(source=record, field_config=fields['dates_value'])
+    dates_iso = parse.get_data_from_field(source=record, field_config=fields['dates_iso'])
+    dates_type = parse.get_data_from_field(source=record, field_config=fields['dates_type'])
+    if dates_type and (dates_value or dates_iso):
+        date_obj = {}
+        if dates_value:
+            date_obj["value"] = dates_value
+        if dates_iso:
+            date_obj["iso"] = process_iso_string(dates_iso)
+        result[dates_type] = date_obj
+
+    # rel_con: one entry per authority (VIAF, LOC, HAF, Syriaca, Pinakes) if uri or label present
+    authorities = [
+        ("viaf_uri", "viaf_label", "VIAF"),
+        ("loc_uri", "loc_label", "LOC"),
+        ("haf_uri", "haf_label", "HAF"),
+        ("syriaca_uri", "syriaca_label", "Syriaca"),
+        ("pinakes_uri", "pinakes_label", "Pinakes"),
+    ]
+    rel_con = []
+    for uri_key, label_key, source in authorities:
+        uri = parse.get_data_from_field(source=record, field_config=fields[uri_key])
+        label = parse.get_data_from_field(source=record, field_config=fields[label_key])
+        if uri or label:
+            rel_con.append({"label": label, "uri": uri, "source": source})
+    if rel_con:
+        result["rel_con"] = rel_con
+
+    # refno: parallel arrays -> array of {label, idno, source} objects
+    refno_labels = parse.get_data_from_field(source=record, field_config=fields['refno_label']) or []
+    refno_idnos = parse.get_data_from_field(source=record, field_config=fields['refno_idno']) or []
+    refno_sources = parse.get_data_from_field(source=record, field_config=fields['refno_source']) or []
+    if refno_labels:
+        result["refno"] = [
+            {"label": get_element(refno_labels, i),
+             "idno": get_element(refno_idnos, i),
+             "source": get_element(refno_sources, i)}
+            for i in range(len(refno_labels))
+        ]
+
+    # bib: lookup to bibs table (same pattern as existing records)
+    bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
+    if bibs and len(bibs) > 0:
+        result["bib"] = [transform_bib_data(bibs)]
+
+    result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
+
+    return result
+
+def transform_place_fields(record, result, fields):
+    # type: {id, label} from two separate CSV columns
+    type_id = parse.get_data_from_field(source=record, field_config=fields['type_id'])
+    type_label = parse.get_data_from_field(source=record, field_config=fields['type_label'])
+    if type_id and type_label:
+        result["type"] = {"id": type_id, "label": type_label}
+
+    result["pref_name"] = parse.get_data_from_field(source=record, field_config=fields['pref_name'])
+
+    result["alt_name"] = parse.get_data_from_field(source=record, field_config=fields['alt_name'])
+
+    result["desc"] = parse.get_data_from_field(source=record, field_config=fields['desc'])
+
+    # rel_con: flexible parallel arrays for any authority
+    rel_con_labels = parse.get_data_from_field(source=record, field_config=fields['rel_con_label']) or []
+    rel_con_uris = parse.get_data_from_field(source=record, field_config=fields['rel_con_uri']) or []
+    rel_con_sources = parse.get_data_from_field(source=record, field_config=fields['rel_con_source']) or []
+    if rel_con_labels:
+        result["rel_con"] = [
+            {"label": get_element(rel_con_labels, i),
+             "uri": get_element(rel_con_uris, i),
+             "source": get_element(rel_con_sources, i)}
+            for i in range(len(rel_con_labels))
+        ]
+
+    # refno: parallel arrays -> array of {label, idno, source} objects
+    refno_labels = parse.get_data_from_field(source=record, field_config=fields['refno_label']) or []
+    refno_idnos = parse.get_data_from_field(source=record, field_config=fields['refno_idno']) or []
+    refno_sources = parse.get_data_from_field(source=record, field_config=fields['refno_source']) or []
+    if refno_labels:
+        result["refno"] = [
+            {"label": get_element(refno_labels, i),
+             "idno": get_element(refno_idnos, i),
+             "source": get_element(refno_sources, i)}
+            for i in range(len(refno_labels))
+        ]
+
+    # bib: lookup to bibs table
+    bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
+    if bibs and len(bibs) > 0:
+        result["bib"] = [transform_bib_data(bibs)]
+
+    result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
+
+    return result
+
+def transform_work_fields(record, result, fields):
+    result["pref_title"] = parse.get_data_from_field(source=record, field_config=fields['pref_title'])
+
+    # orig_lang: {id, label} from two columns
+    orig_lang_label = parse.get_data_from_field(source=record, field_config=fields['orig_lang'])
+    orig_lang_id = parse.get_data_from_field(source=record, field_config=fields['orig_lang_id'])
+    if orig_lang_label and orig_lang_id:
+        result["orig_lang"] = {"id": orig_lang_id, "label": orig_lang_label}
+
+    result["orig_lang_title"] = parse.get_data_from_field(source=record, field_config=fields['orig_lang_title'])
+
+    # alt_title: merge alt_title and NS Title arrays
+    alt_title = parse.get_data_from_field(source=record, field_config=fields['alt_title']) or []
+    ns_title = parse.get_data_from_field(source=record, field_config=fields['ns_title'])
+    ns_title_list = [ns_title] if ns_title else []
+    all_alt_titles = alt_title + ns_title_list
+    if all_alt_titles:
+        result["alt_title"] = all_alt_titles
+
+    result["desc"] = parse.get_data_from_field(source=record, field_config=fields['desc'])
+
+    # genre: parallel arrays -> [{id, label}]
+    genre_labels = parse.get_data_from_field(source=record, field_config=fields['genre_label']) or []
+    genre_ids = parse.get_data_from_field(source=record, field_config=fields['genre_id']) or []
+    if genre_labels:
+        result["genre"] = [
+            {"id": get_element(genre_ids, i), "label": get_element(genre_labels, i)}
+            for i in range(len(genre_labels))
+        ]
+
+    # creator: author ARKs -> [{id, role: {id, label}}]
+    author_arks = parse.get_data_from_field(source=record, field_config=fields['author_ark']) or []
+    if author_arks:
+        result["creator"] = [
+            {"id": ark, "role": {"id": "author", "label": "Author"}}
+            for ark in author_arks
+        ]
+
+    # creation: {value, iso}
+    creation_value = parse.get_data_from_field(source=record, field_config=fields['date_creation'])
+    creation_iso = parse.get_data_from_field(source=record, field_config=fields['date_iso'])
+    if creation_value or creation_iso:
+        creation_obj = {}
+        if creation_value:
+            creation_obj["value"] = creation_value
+        if creation_iso:
+            creation_obj["iso"] = process_iso_string(creation_iso)
+        result["creation"] = creation_obj
+
+    # incipit and explicit: just the value for now
+    incipit_val = parse.get_data_from_field(source=record, field_config=fields['incipit'])
+    if incipit_val:
+        result["incipit"] = {"value": incipit_val}
+
+    explicit_val = parse.get_data_from_field(source=record, field_config=fields['explicit'])
+    if explicit_val:
+        result["explicit"] = {"value": explicit_val}
+
+    # rel_con: authority file entries (same hardcoded pattern as agents)
+    authorities = [
+        ("loc_uri", "loc_label", "LOC"),
+        ("viaf_uri", "viaf_label", "VIAF"),
+        ("pinakes_uri", "pinakes_label", "Pinakes"),
+        ("perseus_uri", "perseus_label", "Perseus"),
+        ("haf_uri", "haf_label", "HAF"),
+        ("syriaca_uri", "syriaca_label", "Syriaca"),
+    ]
+    rel_con = []
+    for uri_key, label_key, source in authorities:
+        uri = parse.get_data_from_field(source=record, field_config=fields[uri_key])
+        label = parse.get_data_from_field(source=record, field_config=fields[label_key])
+        if uri or label:
+            rel_con.append({"label": label, "uri": uri, "source": source})
+    if rel_con:
+        result["rel_con"] = rel_con
+
+    # refno: one entry per reference work (CPG, CPL, TLG)
+    refno = []
+    for idno_key, label_key, source in [
+        ("cpg_idno", "cpg_label", "CPG"),
+        ("cpl_idno", "cpl_label", "CPL"),
+        ("tlg_idno", "tlg_label", "TLG"),
+    ]:
+        idno = parse.get_data_from_field(source=record, field_config=fields[idno_key])
+        label = parse.get_data_from_field(source=record, field_config=fields[label_key])
+        if idno or label:
+            refno.append({"label": label, "idno": idno, "source": source})
+    if refno:
+        result["refno"] = refno
+
+    # bib
+    bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
+    if bibs and len(bibs) > 0:
+        result["bib"] = [transform_bib_data(bibs)]
+
+    result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
+
+    return result
+
 
 # This function handles the ms-obj-specific transforms
 # A result object should be passed in, which is the current record being transformed
@@ -965,7 +1214,7 @@ def transform_change_log_data(change_log_data):
         logs.append({
             "message": get_element(change_log_data["change_log_message"], i),
             "contributor": get_element(change_log_data["change_log_contributor"], i),
-            "added_by": get_element(change_log_data["change_log_added_by"], i),
+            "added_by": get_element(change_log_data["change_log_added_by"], i) or "sinai-admin",
             "timestamp": get_element(change_log_data["change_log_timestamp"], i)
         })
     return logs
