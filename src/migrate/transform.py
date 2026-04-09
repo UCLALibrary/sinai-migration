@@ -187,7 +187,7 @@ def transform_agent_fields(record, result, fields):
     # rel_con: one entry per authority (VIAF, LOC, HAF, Syriaca, Pinakes) if uri or label present
     authorities = [
         ("viaf_uri", "viaf_label", "VIAF"),
-        ("loc_uri", "loc_label", "LOC"),
+        ("loc_uri", "loc_label", "LoC"),
         ("haf_uri", "haf_label", "HAF"),
         ("syriaca_uri", "syriaca_label", "Syriaca"),
         ("pinakes_uri", "pinakes_label", "Pinakes"),
@@ -328,7 +328,7 @@ def transform_work_fields(record, result, fields):
 
     # rel_con: authority file entries (same hardcoded pattern as agents)
     authorities = [
-        ("loc_uri", "loc_label", "LOC"),
+        ("loc_uri", "loc_label", "LoC"),
         ("viaf_uri", "viaf_label", "VIAF"),
         ("pinakes_uri", "pinakes_label", "Pinakes"),
         ("perseus_uri", "perseus_label", "Perseus"),
