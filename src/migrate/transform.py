@@ -1024,13 +1024,18 @@ def transform_associated_entity_data(arks, iso, values, as_written, type_id, typ
         entities.append(e)
         
     return entities
+
+def normalize_edtf_year(year_str):
+    if year_str.startswith('-'):
+        return '-' + year_str[1:].zfill(4)
+    return year_str.zfill(4)
     
 def process_iso_string(iso):
     date = iso.split("/")
-    not_before = date[0].zfill(4)
+    not_before = normalize_edtf_year(date[0])
     not_after = None
     if(len(date) > 1):
-        not_after = date[1].zfill(4)
+        not_after = normalize_edtf_year(date[1])
     return {
         "not_before": not_before,
         "not_after": not_after
