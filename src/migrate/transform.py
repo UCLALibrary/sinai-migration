@@ -1213,6 +1213,16 @@ def transform_tocs_from_table(contents):
         )
     return toc
 
+def parse_airtable_timestamp(ts):
+    if not ts:
+        return None
+    try:
+        from datetime import datetime
+        dt = datetime.strptime(ts, '%a %b %d %Y %H:%M:%S GMT%z')
+        return dt.replace(tzinfo=None).isoformat(timespec='minutes')
+    except ValueError:
+        return ts
+
 def transform_change_log_data(change_log_data):
     logs = []
     for i in range(0, len(change_log_data["change_log_message"])):
@@ -1220,7 +1230,7 @@ def transform_change_log_data(change_log_data):
             "message": get_element(change_log_data["change_log_message"], i),
             "contributor": get_element(change_log_data["change_log_contributor"], i),
             "added_by": get_element(change_log_data["change_log_added_by"], i) or "sinai-admin",
-            "timestamp": get_element(change_log_data["change_log_timestamp"], i)
+            "timestamp": parse_airtable_timestamp(get_element(change_log_data["change_log_timestamp"], i))
         })
     return logs
 
