@@ -28,16 +28,28 @@ gender:
   name: Gender
   csv: text
   airtable: text
-dates_value:
-  name: Dates
+floruit_value:
+  name: floruit_value
   csv: text
   airtable: text
-dates_iso:
-  name: Dates.normalized
+floruit_iso:
+  name: floruit_iso
   csv: text
   airtable: text
-dates_type:
-  name: Dates.type
+birth_value:
+  name: birth_value
+  csv: text
+  airtable: text
+birth_iso:
+  name: birth_iso
+  csv: text
+  airtable: text
+death_value:
+  name: death_value
+  csv: text
+  airtable: text
+death_iso:
+  name: death_iso
   csv: text
   airtable: text
 viaf_uri:

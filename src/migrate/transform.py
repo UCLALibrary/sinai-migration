@@ -172,17 +172,18 @@ def transform_agent_fields(record, result, fields):
     if gender_val:
         result["gender"] = {"id": gender_val.lower(), "label": gender_val}
 
-    # birth/death/floruit -- routed by dates_type column value
-    dates_value = parse.get_data_from_field(source=record, field_config=fields['dates_value'])
-    dates_iso = parse.get_data_from_field(source=record, field_config=fields['dates_iso'])
-    dates_type = parse.get_data_from_field(source=record, field_config=fields['dates_type'])
-    if dates_type and (dates_value or dates_iso):
-        date_obj = {}
-        if dates_value:
-            date_obj["value"] = dates_value
-        if dates_iso:
-            date_obj["iso"] = process_iso_string(dates_iso)
-        result[dates_type] = date_obj
+    # floruit, birth, death date
+    for date_type in ["birth", "death", "floruit"]:
+        value = parse.get_data_from_field(source=record, field_config=fields[f'{date_type}_value'])
+        iso = parse.get_data_from_field(source=record, field_config=fields[f'{date_type}_iso'])
+        if value or iso:
+            date_obj = {}
+            if value:
+                date_obj["value"] = value
+            if iso:
+                date_obj["iso"] = process_iso_string(iso)
+            result[date_type] = date_obj
+
 
     # rel_con: one entry per authority (VIAF, LOC, HAF, Syriaca, Pinakes) if uri or label present
     authorities = [
