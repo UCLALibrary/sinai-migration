@@ -6,6 +6,8 @@ import migrate.parse as parse
 import migrate.wrangle as wrangle
 import migrate.validate as validate
 import json, traceback, logging
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 # the main transformation function
 def transform_records(table_name: str):
@@ -1218,9 +1220,14 @@ def parse_airtable_timestamp(ts):
     if not ts:
         return None
     try:
-        from datetime import datetime
         dt = datetime.strptime(ts, '%a %b %d %Y %H:%M:%S GMT%z')
-        return dt.replace(tzinfo=None).isoformat(timespec='minutes')
+        return dt.astimezone(timezone.utc).isoformat(timespec='minutes')
+    except ValueError:
+        pass
+    try:
+        dt = datetime.strptime(ts, '%Y-%m-%d %H:%M')
+        dt = dt.replace(tzinfo=ZoneInfo('America/Los_Angeles')).astimezone(timezone.utc)
+        return dt.isoformat(timespec='minutes')
     except ValueError:
         return ts
 
