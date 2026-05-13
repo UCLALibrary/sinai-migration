@@ -175,7 +175,7 @@ typed_notes:
     airtable: text+
     delimiter: ["|~|"]
 bibs:
-  name: Portal Reference Instances
+  name: Reference Instances
   csv: record+
   airtable: record+
   delimiter: [","]
