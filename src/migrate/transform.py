@@ -95,7 +95,7 @@ def transform_single_record(record, record_type, fields):
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     
     if bibs and len(bibs) > 0:
-        result["bib"] = [transform_bib_data(bibs)]
+        result["bib"] = transform_bib_data(bibs)
 
     # Add description program and provenance
     metadata_rights = parse.get_data_from_field(source=record, field_config=fields['metadata_rights'])
@@ -219,7 +219,7 @@ def transform_agent_fields(record, result, fields):
     # bib: lookup to bibs table (same pattern as existing records)
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     if bibs and len(bibs) > 0:
-        result["bib"] = [transform_bib_data(bibs)]
+        result["bib"] = transform_bib_data(bibs)
 
     result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
 
@@ -265,7 +265,7 @@ def transform_place_fields(record, result, fields):
     # bib: lookup to bibs table
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     if bibs and len(bibs) > 0:
-        result["bib"] = [transform_bib_data(bibs)]
+        result["bib"] = transform_bib_data(bibs)
 
     result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
 
@@ -364,7 +364,7 @@ def transform_work_fields(record, result, fields):
     # bib
     bibs = parse.get_data_from_field(source=record, field_config=fields['bibs'])
     if bibs and len(bibs) > 0:
-        result["bib"] = [transform_bib_data(bibs)]
+        result["bib"] = transform_bib_data(bibs)
 
     result["note"] = parse.get_data_from_field(source=record, field_config=fields['note'])
 
@@ -964,8 +964,9 @@ def transform_notes_data(notes_data):
 Takes the returned bib data from the parser and reorganizes it into the correct output fields
 """
 def transform_bib_data(bibs):
+    result = []
     for bib in bibs:
-        return {
+        result.append({
             "id": bib["uuid"],
             "shortcode": bib["shortcode"],
             "citation": bib["citation"],
@@ -973,10 +974,12 @@ def transform_bib_data(bibs):
                 "id": bib["type_id"],
                 "label": bib["type_label"]
             },
+            "url": bib["url"],
             "range": bib["range"],
             "alt_shelf": bib["alt_shelf"],
             "note": bib["note"]
-        }
+        })
+    return result
 
 """
 Takes returned data about associated entities from the parser and converts to the associated entity object
@@ -1180,7 +1183,7 @@ def transform_work_wit_data(work_wit_data):
         # bibs
         bibs = w["bibs"]
         if bibs and len(bibs) > 0:
-            wit["bib"] = [transform_bib_data(bibs)]
+            wit["bib"] = transform_bib_data(bibs)
 
         wits.append(wit)
 
