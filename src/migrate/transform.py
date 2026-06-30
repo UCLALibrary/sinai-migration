@@ -785,8 +785,10 @@ def transform_paracontents_data(paracontents_data, level_filter=None):
         return paracontents
     
     for record in paracontents_data:
+        # default empty level to "part", consistent with layer level defaulting
+        para_level = record["level"] if record["level"] else "part"
         # if declared level filter, skip any not for that level
-        if level_filter and record["level"] != level_filter:
+        if level_filter and para_level != level_filter:
             continue
         para = {}
         para_type = {
