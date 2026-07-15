@@ -53,7 +53,7 @@ tables:
     fields: fields/related_mss.yml
     index_col: ID
   writing:
-    csv: 
+    csv: '/Users/kirschbombe/Sites/sinai-migration/configs/csvs/writing-obj-export.csv'
     airtable:
     fields: fields/writing.yml
     index_col: ID
