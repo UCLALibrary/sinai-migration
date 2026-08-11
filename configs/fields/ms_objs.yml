@@ -406,11 +406,11 @@ desc_program_descs:
   airtable: text+
   delimiter: ["|~|"]
 metadata_rights:
-  name: Metadata Rights
+  name: Metadata rights
   csv: text
   airtable: text
 image_rights:
-  name: Metadata Rights
+  name: Image rights
   csv: text
   airtable: text
 image_program_labels: 
@@ -475,7 +475,7 @@ change_log_contributor:
   airtable: text+
   delimiter: ["|~|", ","]
 change_log_added_by:
-  name: Change Log Added by
+  name: Change Log Added By
   csv: text+
   airtable: text+
   delimiter: ["|~|"]

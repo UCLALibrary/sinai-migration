@@ -64,7 +64,7 @@ def transform_single_record(record, record_type, fields):
     result["summary"] = parse.get_data_from_field(source=record, field_config=fields['summary'])
     
     notes_data = parse.get_typed_notes_data(source=record, note_fields=fields['typed_notes'])
-    result["notes"] = transform_notes_data(notes_data)
+    result["note"] = transform_notes_data(notes_data)
 
     # Associated entities, now allowed at all levels
     create_associated_entities(result, record, fields)
@@ -552,7 +552,7 @@ def create_associated_entities(result, record, fields):
     if names:
         result["assoc_name"] = []
         for n in names:
-            result.append(transform_associated_entity_data(
+            result["assoc_name"].append(transform_associated_entity_data(
             arks=[n["name_ark"]],
             values=[n["value"]],
             as_written=[n["as_written"]],
@@ -578,7 +578,7 @@ def create_associated_entities(result, record, fields):
     if places:
         result["assoc_place"] = []
         for p in places:
-            result["assoc_places"].append(transform_associated_entity_data(
+            result["assoc_place"].append(transform_associated_entity_data(
             arks=[p["place_ark"]],
             values=[p["value"]],
             as_written=[p["as_written"]],

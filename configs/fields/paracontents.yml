@@ -11,12 +11,12 @@ level:
   csv: text
   airtable: text
 subtype_id:
-  name: Subtype IDs
+  name: Sub-type IDs
   csv: text+
   airtable: text+
   delimiter: [","]
 subtype_label:
-  name: Subtype Labels
+  name: Sub-type Labels
   csv: text+
   airtable: text+
   delimiter: [","]

@@ -187,7 +187,7 @@ assoc_place_as_written:
   airtable: text+
   delimiter: ["|~|"]
 assoc_place_event_id:
-  name: Associated Place Event ID
+  name: Associated Place Type ID
   csv: text+
   airtable: text+
   delimiter: [","]

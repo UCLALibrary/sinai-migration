@@ -35,7 +35,7 @@ work_wit_id:
   delimiter: [","]
   lookup: work_witnesses.*
 paracontent:
-  name: Paracontents
+  name: Paracontent
   csv: record+
   airtable: record+
   delimiter: [","]
