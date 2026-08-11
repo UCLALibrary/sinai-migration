@@ -81,7 +81,7 @@ def transform_single_record(record, record_type, fields):
                     "label": feature_labels[i]
                 }
             )
-    result["feature"] = features
+    result["features"] = features
 
     # Paracontents
     paracontents_data = parse.get_data_from_field(source=record, field_config=fields["paracontent"])
