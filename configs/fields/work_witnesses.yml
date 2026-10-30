@@ -4,9 +4,9 @@ sequence:
   airtable: text
 work_id:
   name: Work ID
-  csv: text
-  airtable: text
-  delimiter: ["|~|"]
+  csv: text+
+  airtable: text+
+  delimiter: [","]
 work_desc_title:
   name: Work Descriptive Title
   csv: text
